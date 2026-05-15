@@ -1,0 +1,3010 @@
+{
+  "COF-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin PET/AL/PE laminate | Mono PE/PE recyclable | Paper-based recyclable.",
+    "context": "Material comparison: Virgin PET/AL/PE laminate | Mono PE/PE recyclable | Paper-based recyclable.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "COF-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Supply Chain comparison: Virgin PE/PE | PE/PE w 30% PCR | Bio-based PE/PE.",
+    "context": "Supply Chain comparison: Virgin PE/PE | PE/PE w 30% PCR | Bio-based PE/PE.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: PET/AL/PE laminate | Paper-based recyclable | Mono PE/PE.",
+    "context": "Format comparison: PET/AL/PE laminate | Paper-based recyclable | Mono PE/PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "COF-004": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Aluminium | Virgin PP | PLA/cellulose compostable.",
+    "context": "Format comparison: Aluminium | Virgin PP | PLA/cellulose compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Foil laminate (PET/AL/PE) | Paper laminate | Home compostable laminate.",
+    "context": "Material comparison: Foil laminate (PET/AL/PE) | Paper laminate | Home compostable laminate.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-006": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Tetra Pak Aseptic | PET (virgin) | Aluminium.",
+    "context": "Format comparison: Tetra Pak Aseptic | PET (virgin) | Aluminium.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-007": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lifecycle comparison: Tinplate steel | Mono PE/PE.",
+    "context": "Lifecycle comparison: Tinplate steel | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COF-008": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Mono PE/PE w valve | Mono PE/PE no valve.",
+    "context": "Format comparison: Mono PE/PE w valve | Mono PE/PE no valve.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: PE-laminated paper | Woven PP | Mono PE/PE.",
+    "context": "Format comparison: PE-laminated paper | Woven PP | Mono PE/PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "COF-010": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: AlOx PET//PE | Metallised PET//PE | SiOx PET//PE.",
+    "context": "Material comparison: AlOx PET//PE | Metallised PET//PE | SiOx PET//PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-011": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Home compostable PLA | Industrial compostable PLA | Paper-based pod.",
+    "context": "Material comparison: Home compostable PLA | Industrial compostable PLA | Paper-based pod.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-012": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: Mono PE/PE w valve | High-barrier laminate.",
+    "context": "Material comparison: Mono PE/PE w valve | High-barrier laminate.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "VIT-001": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Virgin HDPE | Paper/foil composite | Mono PE/PE.",
+    "context": "Format comparison: Virgin HDPE | Paper/foil composite | Mono PE/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-002": {
+    "storyType": "weight",
+    "keyFinding": "Material comparison: Virgin PET | 100% rPET | Glass.",
+    "context": "Material comparison: Virgin PET | 100% rPET | Glass.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin HDPE | 100% PCR HDPE | Paper-based composite.",
+    "context": "Material comparison: Virgin HDPE | 100% PCR HDPE | Paper-based composite.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "VIT-004": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Foil laminate | Mono PE/PE | Home compostable.",
+    "context": "Material comparison: Foil laminate | Mono PE/PE | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Foil laminate | Paper-based laminate | Home compostable.",
+    "context": "Material comparison: Foil laminate | Paper-based laminate | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-006": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: PVC/Aluminium | PP/Aluminium | Paper push-through.",
+    "context": "Material comparison: PVC/Aluminium | PP/Aluminium | Paper push-through.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-007": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Virgin PET | Glass | Mono PE/PE.",
+    "context": "Format comparison: Virgin PET | Glass | Mono PE/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-008": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Virgin PET | Glass | Aluminium.",
+    "context": "Format comparison: Virgin PET | Glass | Aluminium.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Virgin PET | FSC paper + foil sachet | Paper composite.",
+    "context": "Format comparison: Virgin PET | FSC paper + foil sachet | Paper composite.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin BOPP | Paper-based laminate | Home compostable.",
+    "context": "Material comparison: Virgin BOPP | Paper-based laminate | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-011": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Virgin HDPE | Aluminium | Mono PE/PE.",
+    "context": "Format comparison: Virgin HDPE | Aluminium | Mono PE/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Aluminium | Virgin PP | Paper composite.",
+    "context": "Format comparison: Aluminium | Virgin PP | Paper composite.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "REF-001": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lifecycle comparison: Mono PE/PE | Virgin HDPE.",
+    "context": "Lifecycle comparison: Mono PE/PE | Virgin HDPE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-002": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Aluminium tube + tablet | Mono PE/PE | Virgin HDPE.",
+    "context": "Format comparison: Aluminium tube + tablet | Mono PE/PE | Virgin HDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-003": {
+    "storyType": "weight",
+    "keyFinding": "Lifecycle comparison: Virgin HDPE x1 + 9 refills | Virgin HDPE.",
+    "context": "Lifecycle comparison: Virgin HDPE x1 + 9 refills | Virgin HDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-004": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Aluminium | Glass | Virgin HDPE.",
+    "context": "Format comparison: Aluminium | Glass | Virgin HDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Mono PE/PE | Paper-based laminate | Home compostable.",
+    "context": "Material comparison: Mono PE/PE | Paper-based laminate | Home compostable.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "REF-006": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Mono PE/PE | Mono PE/PE.",
+    "context": "Format comparison: Mono PE/PE | Mono PE/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-007": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Virgin HDPE | Aluminium | Cardboard composite.",
+    "context": "Format comparison: Virgin HDPE | Aluminium | Cardboard composite.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "REF-008": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lifecycle comparison: Glass x1 + 19 reuses | Mono PE/PE.",
+    "context": "Lifecycle comparison: Glass x1 + 19 reuses | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Liquid carton (paper/PE) | Mono PE/PE | Mono PE.",
+    "context": "Format comparison: Liquid carton (paper/PE) | Mono PE/PE | Mono PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "REF-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Cardboard + LDPE bag | Virgin HDPE | Paper sack.",
+    "context": "Format comparison: Cardboard + LDPE bag | Virgin HDPE | Paper sack.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: PET/AL/PE laminate | Mono PE/PE recyclable | Paper-based recyclable.",
+    "context": "Material comparison: PET/AL/PE laminate | Mono PE/PE recyclable | Paper-based recyclable.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "SUP-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Supply Chain comparison: Virgin PE/PE | 30% PCR PE/PE | Bio-based PE/PE.",
+    "context": "Supply Chain comparison: Virgin PE/PE | 30% PCR PE/PE | Bio-based PE/PE.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-003": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: AlOx PET//PE | Metallised PET//PE | EVOH multilayer.",
+    "context": "Material comparison: AlOx PET//PE | Metallised PET//PE | EVOH multilayer.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-004": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Mono PE/PE + PE spout | Mono PE/PE.",
+    "context": "Format comparison: Mono PE/PE + PE spout | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-005": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Mono PE/PE + PE zipper | Mono PE/PE.",
+    "context": "Format comparison: Mono PE/PE + PE zipper | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-006": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: Mono PE/PE w 100% ink | Mono PE/PE no ink.",
+    "context": "Material comparison: Mono PE/PE w 100% ink | Mono PE/PE no ink.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-007": {
+    "storyType": "weight",
+    "keyFinding": "Lifecycle comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "context": "Lifecycle comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SUP-008": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "context": "Format comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-009": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "context": "Material comparison: Mono PE/PE | Mono PE/PE | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-010": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: PET/AL/PE matte multilayer | Mono PE/PE.",
+    "context": "Material comparison: PET/AL/PE matte multilayer | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-011": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: High-barrier multilayer | Mono PE/PE.",
+    "context": "Material comparison: High-barrier multilayer | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Paper/PE laminate | PET/PE film laminate.",
+    "context": "Material comparison: Paper/PE laminate | PET/PE film laminate.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin LDPE | 100% PCR LDPE | FSC paper.",
+    "context": "Material comparison: Virgin LDPE | 100% PCR LDPE | FSC paper.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ECM-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Bubble-lined LDPE | Paper-padded | Honeycomb paper.",
+    "context": "Format comparison: Bubble-lined LDPE | Paper-padded | Honeycomb paper.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin LDPE | 100% PCR LDPE | FSC paper.",
+    "context": "Material comparison: Virgin LDPE | 100% PCR LDPE | FSC paper.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ECM-004": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Corrugated cardboard | FSC paper | 100% PCR LDPE.",
+    "context": "Format comparison: Corrugated cardboard | FSC paper | 100% PCR LDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-005": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: LDPE film (air-filled) | FSC paper | Cornstarch.",
+    "context": "Format comparison: LDPE film (air-filled) | FSC paper | Cornstarch.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-006": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lifecycle comparison: Multi-use HDPE | 100% PCR LDPE.",
+    "context": "Lifecycle comparison: Multi-use HDPE | 100% PCR LDPE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "ECM-007": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: LDPE | LDPE | LDPE.",
+    "context": "Material comparison: LDPE | LDPE | LDPE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-008": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin LDPE | 100% PCR LDPE | Home compostable.",
+    "context": "Material comparison: Virgin LDPE | 100% PCR LDPE | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Woven PP | Paper sack | LDPE.",
+    "context": "Format comparison: Woven PP | Paper sack | LDPE.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: BOPP (plastic) | Paper kraft (self-adhesive) | Water-activated paper.",
+    "context": "Material comparison: BOPP (plastic) | Paper kraft (self-adhesive) | Water-activated paper.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-011": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Corrugated cardboard + tape | FSC paper | 100% PCR LDPE.",
+    "context": "Format comparison: Corrugated cardboard + tape | FSC paper | 100% PCR LDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-012": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Corrugated cardboard | 100% PCR LDPE | Multi-use HDPE.",
+    "context": "Format comparison: Corrugated cardboard | 100% PCR LDPE | Multi-use HDPE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-001": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Multilayer PA/PE | Virgin PET/PE | 100% rPET mono.",
+    "context": "Format comparison: Multilayer PA/PE | Virgin PET/PE | 100% rPET mono.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-002": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: Mono PE/PE recyclable | PET/AL/PE laminate.",
+    "context": "Material comparison: Mono PE/PE recyclable | PET/AL/PE laminate.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-003": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: Mono PE/PE | Mono PP | PET/PE laminate.",
+    "context": "Material comparison: Mono PE/PE | Mono PP | PET/PE laminate.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-004": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: PET/AL/PP | Aluminium-free recyclable.",
+    "context": "Material comparison: PET/AL/PP | Aluminium-free recyclable.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Paper/AlOx | PET/Met laminate.",
+    "context": "Material comparison: Paper/AlOx | PET/Met laminate.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-006": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin CPET | 50% rPET CPET | Paper-pulp fibre.",
+    "context": "Material comparison: Virgin CPET | 50% rPET CPET | Paper-pulp fibre.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-007": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: LDPE | Paper-based laminate | Home compostable.",
+    "context": "Material comparison: LDPE | Paper-based laminate | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-008": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: PET/Met/PE laminate | Mono PE/PE | Paper-based laminate.",
+    "context": "Material comparison: PET/Met/PE laminate | Mono PE/PE | Paper-based laminate.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "TCH-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin PET | 100% rPET | Paper-pulp fibre.",
+    "context": "Material comparison: Virgin PET | 100% rPET | Paper-pulp fibre.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-010": {
+    "storyType": "material",
+    "keyFinding": "Format comparison: Tetra Pak Aseptic | HDPE | PET.",
+    "context": "Format comparison: Tetra Pak Aseptic | HDPE | PET.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-011": {
+    "storyType": "weight",
+    "keyFinding": "Format comparison: Multilayer PA/PE | Mono PE/PE | PET/PE.",
+    "context": "Format comparison: Multilayer PA/PE | Mono PE/PE | PET/PE.",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Heat-resistant PET | HDPE | Paper-laminated.",
+    "context": "Format comparison: Heat-resistant PET | HDPE | Paper-laminated.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin BOPP | MDOPE mono recyclable | Paper-based laminate.",
+    "context": "Material comparison: Virgin BOPP | MDOPE mono recyclable | Paper-based laminate.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Aluminium foil | Waxed paper | Home compostable.",
+    "context": "Material comparison: Aluminium foil | Waxed paper | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-003": {
+    "storyType": "material",
+    "keyFinding": "Supply Chain comparison: Virgin BOPP | PCR BOPP | Mono PE/PE.",
+    "context": "Supply Chain comparison: Virgin BOPP | PCR BOPP | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "FLX-004": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: LDPE | Paper w PE window | Home compostable.",
+    "context": "Material comparison: LDPE | Paper w PE window | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-005": {
+    "storyType": "material",
+    "keyFinding": "Material comparison: PE/PA multilayer | Mono PE/PE.",
+    "context": "Material comparison: PE/PA multilayer | Mono PE/PE.",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "FLX-006": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Virgin BOPP | FSC paper | Paper w PLA window.",
+    "context": "Material comparison: Virgin BOPP | FSC paper | Paper w PLA window.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-007": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: Woven PP | Paper-based | Mono PE/PE.",
+    "context": "Format comparison: Woven PP | Paper-based | Mono PE/PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-008": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Nylon mesh | Paper (PLA-sealed) | Hemp/PLA compostable.",
+    "context": "Material comparison: Nylon mesh | Paper (PLA-sealed) | Hemp/PLA compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: Foil laminate | Paper-based laminate | Home compostable.",
+    "context": "Material comparison: Foil laminate | Paper-based laminate | Home compostable.",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: PET/Met/PE + PVC tray | Mono PE/PE + rPET tray | Paper outer + paper tray.",
+    "context": "Material comparison: PET/Met/PE + PVC tray | Mono PE/PE + rPET tray | Paper outer + paper tray.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-011": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Material comparison: PE/PE multilayer | Paper-only | Mono PE.",
+    "context": "Material comparison: PE/PE multilayer | Paper-only | Mono PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format comparison: BOPP twist | Paper twist | Mono PE/PE.",
+    "context": "Format comparison: BOPP twist | Paper twist | Mono PE/PE.",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "COF-006B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to COF-006; adds glass which dominates carbon impact",
+    "context": "Sister to COF-006; adds glass which dominates carbon impact",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-002B": {
+    "storyType": "material",
+    "keyFinding": "Sister to VIT-002; covers aluminium variant",
+    "context": "Sister to VIT-002; covers aluminium variant",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "VIT-007B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to VIT-007; subs paper tube for glass",
+    "context": "Sister to VIT-007; subs paper tube for glass",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-011B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to VIT-011; subs paper tube for aluminium tin",
+    "context": "Sister to VIT-011; subs paper tube for aluminium tin",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-006B": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Sister to TCH-006; covers PP variant",
+    "context": "Sister to TCH-006; covers PP variant",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-009B": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Sister to TCH-009; covers aluminium variant",
+    "context": "Sister to TCH-009; covers aluminium variant",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-010B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to TCH-010; adds glass \u2014 major carbon driver",
+    "context": "Sister to TCH-010; adds glass \u2014 major carbon driver",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-012B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to TCH-012; subs glass for HDPE",
+    "context": "Sister to TCH-012; subs glass for HDPE",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SUP-003B": {
+    "storyType": "material",
+    "keyFinding": "Sister to SUP-003; SiOx is the recyclable variant \u2014 interesting end-of-life contrast",
+    "context": "Sister to SUP-003; SiOx is the recyclable variant \u2014 interesting end-of-life contrast",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-008B": {
+    "storyType": "weight",
+    "keyFinding": "Sister to ECM-008; the elimination case as baseline",
+    "context": "Sister to ECM-008; the elimination case as baseline",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COF-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format-compatibility lens within Nespresso ecosystem",
+    "context": "Format-compatibility lens within Nespresso ecosystem",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-014": {
+    "storyType": "lifecycle",
+    "keyFinding": "Coffee-specific pack size scaling \u2014 informs SKU strategy",
+    "context": "Coffee-specific pack size scaling \u2014 informs SKU strategy",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "VIT-013": {
+    "storyType": "material",
+    "keyFinding": "30-day delivery format \u2014 interesting for daily-pack subscription brands",
+    "context": "30-day delivery format \u2014 interesting for daily-pack subscription brands",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "VIT-014": {
+    "storyType": "weight",
+    "keyFinding": "Tincture / oils \u2014 light-sensitive product category",
+    "context": "Tincture / oils \u2014 light-sensitive product category",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-011": {
+    "storyType": "weight",
+    "keyFinding": "Water-content reduction angle \u2014 bar/concentrate vs full liquid",
+    "context": "Water-content reduction angle \u2014 bar/concentrate vs full liquid",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-012": {
+    "storyType": "lifecycle",
+    "keyFinding": "Distribution-model decision \u2014 store refill vs ship vs buy new",
+    "context": "Distribution-model decision \u2014 store refill vs ship vs buy new",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SUP-013": {
+    "storyType": "material",
+    "keyFinding": "Closure type material impact",
+    "context": "Closure type material impact",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Wholesale / hanger garment delivery format",
+    "context": "Wholesale / hanger garment delivery format",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Fresh produce / salad category",
+    "context": "Fresh produce / salad category",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Foodservice / catering single-serve dairy / spread",
+    "context": "Foodservice / catering single-serve dairy / spread",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-001": {
+    "storyType": "weight",
+    "keyFinding": "Counterintuitive: bigger packs use ~50% less material per kg of food",
+    "context": "Counterintuitive: bigger packs use ~50% less material per kg of food",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "PET-002": {
+    "storyType": "material",
+    "keyFinding": "Wet pet food single-serve material choice",
+    "context": "Wet pet food single-serve material choice",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "PET-003": {
+    "storyType": "weight",
+    "keyFinding": "Multipack format choice \u2014 cans dominate by 5x",
+    "context": "Multipack format choice \u2014 cans dominate by 5x",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "PET-004": {
+    "storyType": "weight",
+    "keyFinding": "Wet food can vs pouch \u2014 pouch wins material; can wins EOL",
+    "context": "Wet food can vs pouch \u2014 pouch wins material; can wins EOL",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "PET-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pet treat pouch \u2014 common comparison",
+    "context": "Pet treat pouch \u2014 common comparison",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "PET-006": {
+    "storyType": "lifecycle",
+    "keyFinding": "Subscription model material reduction",
+    "context": "Subscription model material reduction",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "PET-007": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Cat litter format choice",
+    "context": "Cat litter format choice",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-008": {
+    "storyType": "weight",
+    "keyFinding": "Pet supplement format",
+    "context": "Pet supplement format",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "PET-009": {
+    "storyType": "material",
+    "keyFinding": "Frozen / raw pet food category",
+    "context": "Frozen / raw pet food category",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "PET-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Wet food tray material choice",
+    "context": "Wet food tray material choice",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BEV-001": {
+    "storyType": "material",
+    "keyFinding": "Bottled water classics",
+    "context": "Bottled water classics",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-002": {
+    "storyType": "weight",
+    "keyFinding": "Rigid vs flexible \u2014 flexible 25x lighter than glass",
+    "context": "Rigid vs flexible \u2014 flexible 25x lighter than glass",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-003": {
+    "storyType": "material",
+    "keyFinding": "Juice category \u2014 flexible spouted emerging",
+    "context": "Juice category \u2014 flexible spouted emerging",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-004": {
+    "storyType": "material",
+    "keyFinding": "Sports drink format",
+    "context": "Sports drink format",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-005": {
+    "storyType": "weight",
+    "keyFinding": "Classic soft drink format question",
+    "context": "Classic soft drink format question",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-006": {
+    "storyType": "weight",
+    "keyFinding": "Kombucha typically defaults to glass",
+    "context": "Kombucha typically defaults to glass",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-007": {
+    "storyType": "material",
+    "keyFinding": "Kid's smoothie format",
+    "context": "Kid's smoothie format",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-008": {
+    "storyType": "weight",
+    "keyFinding": "Wine packaging revolution",
+    "context": "Wine packaging revolution",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-009": {
+    "storyType": "weight",
+    "keyFinding": "Innovative wine formats \u2014 paper bottle emerging",
+    "context": "Innovative wine formats \u2014 paper bottle emerging",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-010": {
+    "storyType": "weight",
+    "keyFinding": "Concentrate revolution \u2014 17x reduction",
+    "context": "Concentrate revolution \u2014 17x reduction",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-011": {
+    "storyType": "material",
+    "keyFinding": "Bulk water B2B / catering",
+    "context": "Bulk water B2B / catering",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-012": {
+    "storyType": "weight",
+    "keyFinding": "Beer format \u2014 PET emerging in some markets",
+    "context": "Beer format \u2014 PET emerging in some markets",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-001": {
+    "storyType": "weight",
+    "keyFinding": "Skincare refill \u2014 17x reduction",
+    "context": "Skincare refill \u2014 17x reduction",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-002": {
+    "storyType": "weight",
+    "keyFinding": "Foundation refill case",
+    "context": "Foundation refill case",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-003": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lipstick refill case \u2014 44% reduction",
+    "context": "Lipstick refill case \u2014 44% reduction",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-004": {
+    "storyType": "weight",
+    "keyFinding": "Hair care reduction options",
+    "context": "Hair care reduction options",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-005": {
+    "storyType": "lifecycle",
+    "keyFinding": "Body lotion lifecycle",
+    "context": "Body lotion lifecycle",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-006": {
+    "storyType": "lifecycle",
+    "keyFinding": "Hand wash distribution model",
+    "context": "Hand wash distribution model",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-007": {
+    "storyType": "lifecycle",
+    "keyFinding": "Mascara refill case",
+    "context": "Mascara refill case",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-008": {
+    "storyType": "lifecycle",
+    "keyFinding": "Perfume refill \u2014 54% reduction",
+    "context": "Perfume refill \u2014 54% reduction",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Deodorant format",
+    "context": "Deodorant format",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COS-010": {
+    "storyType": "weight",
+    "keyFinding": "Small format refill \u2014 counterintuitive: simple paperboard wins",
+    "context": "Small format refill \u2014 counterintuitive: simple paperboard wins",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-011": {
+    "storyType": "lifecycle",
+    "keyFinding": "Compact refill \u2014 material choice less important than refillability",
+    "context": "Compact refill \u2014 material choice less important than refillability",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Sheet mask sachet category",
+    "context": "Sheet mask sachet category",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ELM-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Multi-component cereal \u2014 flexible-only saves 60% material",
+    "context": "Multi-component cereal \u2014 flexible-only saves 60% material",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ELM-002": {
+    "storyType": "weight",
+    "keyFinding": "Pasta \u2014 bag/SUP eliminate cardboard",
+    "context": "Pasta \u2014 bag/SUP eliminate cardboard",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tea bag pack \u2014 42% reduction",
+    "context": "Tea bag pack \u2014 42% reduction",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ELM-004": {
+    "storyType": "weight",
+    "keyFinding": "Coffee tin elimination \u2014 90% reduction; trade-off vs reuse model in COF-007",
+    "context": "Coffee tin elimination \u2014 90% reduction; trade-off vs reuse model in COF-007",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-005": {
+    "storyType": "lifecycle",
+    "keyFinding": "Cracker pack consolidation \u2014 63% reduction",
+    "context": "Cracker pack consolidation \u2014 63% reduction",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "ELM-006": {
+    "storyType": "weight",
+    "keyFinding": "Pantry staple consolidation",
+    "context": "Pantry staple consolidation",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-007": {
+    "storyType": "weight",
+    "keyFinding": "Soup multipack \u2014 staged consolidation",
+    "context": "Soup multipack \u2014 staged consolidation",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-008": {
+    "storyType": "weight",
+    "keyFinding": "Powdered drink \u2014 80% reduction",
+    "context": "Powdered drink \u2014 80% reduction",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Snack bar consolidation \u2014 48% reduction",
+    "context": "Snack bar consolidation \u2014 48% reduction",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ELM-010": {
+    "storyType": "weight",
+    "keyFinding": "Confectionery boxed vs loose \u2014 79% reduction",
+    "context": "Confectionery boxed vs loose \u2014 79% reduction",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BIO-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tests whether PHA modifier shifts EOL from industrial to home compost, and the carbon trade-off of blending",
+    "context": "Tests whether PHA modifier shifts EOL from industrial to home compost, and the carbon trade-off of blending",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Feedstock origin sensitivity for PLA at otherwise-identical pack design",
+    "context": "Feedstock origin sensitivity for PLA at otherwise-identical pack design",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Same use case across three bioplastic formats \u2014 paper-PLA vs all-PLA vs PHA",
+    "context": "Same use case across three bioplastic formats \u2014 paper-PLA vs all-PLA vs PHA",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-004": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Direct supplier benchmark \u2014 NatureWorks US vs Total Corbion Thailand",
+    "context": "Direct supplier benchmark \u2014 NatureWorks US vs Total Corbion Thailand",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-005": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Format-vs-format comparison within same material (PLA) to isolate format effect",
+    "context": "Format-vs-format comparison within same material (PLA) to isolate format effect",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-006": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Lid format-vs-material within the bioplastic family",
+    "context": "Lid format-vs-material within the bioplastic family",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-007": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Single-layer compostable film comparison for dry snack",
+    "context": "Single-layer compostable film comparison for dry snack",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-008": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Capsule format across three bio variants \u2014 practical EOL differs",
+    "context": "Capsule format across three bio variants \u2014 practical EOL differs",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-009": {
+    "storyType": "counterintuitive",
+    "keyFinding": "CPLA enables hot food use; weight and process energy slightly higher",
+    "context": "CPLA enables hot food use; weight and process energy slightly higher",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-010": {
+    "storyType": "counterintuitive",
+    "keyFinding": "BOPLA enables lower gauge; PHA blend increases robustness",
+    "context": "BOPLA enables lower gauge; PHA blend increases robustness",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-011": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tests where PHA wins vs PLA vs incumbent fossil PE on lifecycle and EOL flexibility",
+    "context": "Tests where PHA wins vs PLA vs incumbent fossil PE on lifecycle and EOL flexibility",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "PHA blend partner determines whether home composting and marine degradation are achieved",
+    "context": "PHA blend partner determines whether home composting and marine degradation are achieved",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Same form factor; marine vs industrial EOL outcomes diverge sharply when leakage is the failure mode",
+    "context": "Same form factor; marine vs industrial EOL outcomes diverge sharply when leakage is the failure mode",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bioplastic vs wood for cutlery; PHA reaches home compost where PLA stops at industrial",
+    "context": "Bioplastic vs wood for cutlery; PHA reaches home compost where PLA stops at industrial",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Drinking straw category \u2014 PHA gives home-compost option without paper sogginess",
+    "context": "Drinking straw category \u2014 PHA gives home-compost option without paper sogginess",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Berry punnet \u2014 PHA gives best leakage outcome but rPET stays cheapest",
+    "context": "Berry punnet \u2014 PHA gives best leakage outcome but rPET stays cheapest",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three-way mailer \u2014 PHA wins on EOL flexibility, LDPE wins on existing recycling",
+    "context": "Three-way mailer \u2014 PHA wins on EOL flexibility, LDPE wins on existing recycling",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-018": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Hot cup coatings \u2014 PHA enables true home-compost outcome for the cup",
+    "context": "Hot cup coatings \u2014 PHA enables true home-compost outcome for the cup",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Condiment sachet \u2014 small flexible item where leakage is most acute",
+    "context": "Condiment sachet \u2014 small flexible item where leakage is most acute",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pet wellness single-serve \u2014 PHA differentiates on home compost",
+    "context": "Pet wellness single-serve \u2014 PHA differentiates on home compost",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-021": {
+    "storyType": "material",
+    "keyFinding": "High-barrier cellulose challenges Met-PET on barrier + compost; tests carbon impact",
+    "context": "High-barrier cellulose challenges Met-PET on barrier + compost; tests carbon impact",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-022": {
+    "storyType": "counterintuitive",
+    "keyFinding": "All-bio laminate strategies \u2014 cellulose+bio-PE vs paper+PLA vs pure PLA",
+    "context": "All-bio laminate strategies \u2014 cellulose+bio-PE vs paper+PLA vs pure PLA",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-023": {
+    "storyType": "material",
+    "keyFinding": "Classic cellophane-like twist with home compostable EOL",
+    "context": "Classic cellophane-like twist with home compostable EOL",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bread bag \u2014 cellulose multilayer vs incumbent LDPE vs paper+window",
+    "context": "Bread bag \u2014 cellulose multilayer vs incumbent LDPE vs paper+window",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-025": {
+    "storyType": "material",
+    "keyFinding": "Same supplier, two cellulose grades \u2014 composting infrastructure dependency",
+    "context": "Same supplier, two cellulose grades \u2014 composting infrastructure dependency",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-026": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Window material choice in paper carton \u2014 small share of pack but blocks recycling",
+    "context": "Window material choice in paper carton \u2014 small share of pack but blocks recycling",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-027": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tea individual wrap \u2014 premium application for bio films",
+    "context": "Tea individual wrap \u2014 premium application for bio films",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-028": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Paper-cellulose laminate retains paper feel and adds home-compostable barrier",
+    "context": "Paper-cellulose laminate retains paper feel and adds home-compostable barrier",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-029": {
+    "storyType": "material",
+    "keyFinding": "Top film for MAP punnet \u2014 switch from PET to cellulose",
+    "context": "Top film for MAP punnet \u2014 switch from PET to cellulose",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-030": {
+    "storyType": "material",
+    "keyFinding": "Foodservice stretch \u2014 cellulose stretch alternative to LDPE cling",
+    "context": "Foodservice stretch \u2014 cellulose stretch alternative to LDPE cling",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-031": {
+    "storyType": "material",
+    "keyFinding": "Drop-in bio-HDPE direct benchmark \u2014 bio vs virgin vs PCR for identical bottle",
+    "context": "Drop-in bio-HDPE direct benchmark \u2014 bio vs virgin vs PCR for identical bottle",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-032": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Yogurt pot \u2014 bio-PP drop-in is identical mechanically; carbon difference is the question",
+    "context": "Yogurt pot \u2014 bio-PP drop-in is identical mechanically; carbon difference is the question",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-033": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three feedstocks for the same PET bottle \u2014 bio drop-in vs virgin vs recycled",
+    "context": "Three feedstocks for the same PET bottle \u2014 bio drop-in vs virgin vs recycled",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-034": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Brazilian sugar cane vs US corn for the same bio-PE chemistry",
+    "context": "Brazilian sugar cane vs US corn for the same bio-PE chemistry",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-035": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Same bio-PE material in flexible vs rigid format reveals where the format efficiency dominates",
+    "context": "Same bio-PE material in flexible vs rigid format reveals where the format efficiency dominates",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-036": {
+    "storyType": "counterintuitive",
+    "keyFinding": "PET tray \u2014 drop-in bio vs virgin vs recycled",
+    "context": "PET tray \u2014 drop-in bio vs virgin vs recycled",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-037": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Closures isolation test \u2014 small share of pack but easiest place to put bio-PE",
+    "context": "Closures isolation test \u2014 small share of pack but easiest place to put bio-PE",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-038": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Mono-PE SUP \u2014 does going bio-PE help when recyclability is already there?",
+    "context": "Mono-PE SUP \u2014 does going bio-PE help when recyclability is already there?",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-039": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Shrink wrap secondary pack \u2014 bio drop-in",
+    "context": "Shrink wrap secondary pack \u2014 bio drop-in",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-040": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Liner substitution inside paper bag \u2014 bio-PE preserves recyclability",
+    "context": "Liner substitution inside paper bag \u2014 bio-PE preserves recyclability",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-041": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three biopolymers head-to-head for the same flow wrap",
+    "context": "Three biopolymers head-to-head for the same flow wrap",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-042": {
+    "storyType": "counterintuitive",
+    "keyFinding": "All-bio laminate vs incumbent foil laminate at the high-barrier end",
+    "context": "All-bio laminate vs incumbent foil laminate at the high-barrier end",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-043": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bio cup three ways \u2014 substrate vs coating strategies",
+    "context": "Bio cup three ways \u2014 substrate vs coating strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-044": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Coffee capsule across three bio chemistries",
+    "context": "Coffee capsule across three bio chemistries",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-045": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tray category \u2014 bioplastic substrate vs paper+bio-coating",
+    "context": "Tray category \u2014 bioplastic substrate vs paper+bio-coating",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-046": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bottle three ways \u2014 compostable PLA, compostable PHA, recyclable bio-PET drop-in",
+    "context": "Bottle three ways \u2014 compostable PLA, compostable PHA, recyclable bio-PET drop-in",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-047": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Four-way single-use fork comparison",
+    "context": "Four-way single-use fork comparison",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-048": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Shrink sleeve \u2014 bio three ways, decorative full-body wrap",
+    "context": "Shrink sleeve \u2014 bio three ways, decorative full-body wrap",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-049": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Two all-bio multilayer constructions \u2014 full home compost vs lower-cost",
+    "context": "Two all-bio multilayer constructions \u2014 full home compost vs lower-cost",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-050": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Foam replacement category \u2014 bio foams vs paper pulp",
+    "context": "Foam replacement category \u2014 bio foams vs paper pulp",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-051": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Same physical pack, three end-of-life routes \u2014 illustrates wishcycling risk for PLA",
+    "context": "Same physical pack, three end-of-life routes \u2014 illustrates wishcycling risk for PLA",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-052": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Ocean-leakage scenario \u2014 only PHA marine grade actually solves the leakage failure mode",
+    "context": "Ocean-leakage scenario \u2014 only PHA marine grade actually solves the leakage failure mode",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-053": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Theoretical vs practical EOL \u2014 what 'compostable' actually delivers in current infrastructure",
+    "context": "Theoretical vs practical EOL \u2014 what 'compostable' actually delivers in current infrastructure",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-054": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Identical pack, different geography \u2014 composting access drives EOL outcome",
+    "context": "Identical pack, different geography \u2014 composting access drives EOL outcome",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-055": {
+    "storyType": "material",
+    "keyFinding": "Closed-loop B2B compostable wins; retail open-loop typically fails",
+    "context": "Closed-loop B2B compostable wins; retail open-loop typically fails",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-056": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Home compostable label only realises benefit if user composts at home",
+    "context": "Home compostable label only realises benefit if user composts at home",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-057": {
+    "storyType": "material",
+    "keyFinding": "Same kit \u2014 whether it composts depends entirely on where it is used",
+    "context": "Same kit \u2014 whether it composts depends entirely on where it is used",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-058": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Even a successful bio retort fails if it cannot reach industrial compost",
+    "context": "Even a successful bio retort fails if it cannot reach industrial compost",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BIO-059": {
+    "storyType": "material",
+    "keyFinding": "Same bio mailer, three geographies \u2014 infrastructure determines EOL outcome",
+    "context": "Same bio mailer, three geographies \u2014 infrastructure determines EOL outcome",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BIO-060": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Compostable vs recyclable trade-off when composting infrastructure is missing",
+    "context": "Compostable vs recyclable trade-off when composting infrastructure is missing",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-001": {
+    "storyType": "counterintuitive",
+    "keyFinding": "PLA's higher density and energy-intensive lactide synthesis lose to HDPE on a short-life retail item \u2014 counterintuitive case",
+    "context": "PLA's higher density and energy-intensive lactide synthesis lose to HDPE on a short-life retail item \u2014 counterintuitive case",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-002": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Where industrial compost is absent, the PLA coating provides no EOL benefit and adds upstream cost",
+    "context": "Where industrial compost is absent, the PLA coating provides no EOL benefit and adds upstream cost",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-003": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Where soft-plastics drop-off exists but no compost stream does, LDPE actually has the cleaner end-of-life",
+    "context": "Where soft-plastics drop-off exists but no compost stream does, LDPE actually has the cleaner end-of-life",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-004": {
+    "storyType": "counterintuitive",
+    "keyFinding": "rPET avoided emissions plus a mature stream beat bio-feedstock virgin PE on the carbon ledger",
+    "context": "rPET avoided emissions plus a mature stream beat bio-feedstock virgin PE on the carbon ledger",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-005": {
+    "storyType": "material",
+    "keyFinding": "Cellulose is higher-impact upstream; if soft-plastics recycling is reliable, mono-PE wins on carbon",
+    "context": "Cellulose is higher-impact upstream; if soft-plastics recycling is reliable, mono-PE wins on carbon",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-006": {
+    "storyType": "weight",
+    "keyFinding": "Glass needs more than 4-5 reuses to win; at 2 reuses it is heavier on carbon than 2 PET",
+    "context": "Glass needs more than 4-5 reuses to win; at 2 reuses it is heavier on carbon than 2 PET",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-007": {
+    "storyType": "lifecycle",
+    "keyFinding": "Heavier reusable + reverse logistics breaks even only above 5 fills",
+    "context": "Heavier reusable + reverse logistics breaks even only above 5 fills",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SENS-008": {
+    "storyType": "lifecycle",
+    "keyFinding": "Return shipping carbon eats the reuse benefit at low cycle counts",
+    "context": "Return shipping carbon eats the reuse benefit at low cycle counts",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SENS-009": {
+    "storyType": "lifecycle",
+    "keyFinding": "Tin needs ~7+ fills to overcome its much higher upfront material; below that mono-PE wins",
+    "context": "Tin needs ~7+ fills to overcome its much higher upfront material; below that mono-PE wins",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SENS-010": {
+    "storyType": "weight",
+    "keyFinding": "Premium refill systems can be carbon-worse than bioplastic single-use when refill rates are realistic",
+    "context": "Premium refill systems can be carbon-worse than bioplastic single-use when refill rates are realistic",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-011": {
+    "storyType": "material",
+    "keyFinding": "Same can; smelter region drives kgCO2e/can by a factor of ~3x",
+    "context": "Same can; smelter region drives kgCO2e/can by a factor of ~3x",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-012": {
+    "storyType": "material",
+    "keyFinding": "Same converted bottle, different production grid \u2014 flips winner vs glass",
+    "context": "Same converted bottle, different production grid \u2014 flips winner vs glass",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-013": {
+    "storyType": "material",
+    "keyFinding": "Glass furnace energy is dominant \u2014 grid choice moves the bottle from worst to median performer",
+    "context": "Glass furnace energy is dominant \u2014 grid choice moves the bottle from worst to median performer",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Brazil's hydro grid is a major reason Braskem bio-PE outperforms \u2014 same chemistry on US grid is much closer to fossil PE",
+    "context": "Brazil's hydro grid is a major reason Braskem bio-PE outperforms \u2014 same chemistry on US grid is much closer to fossil PE",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-015": {
+    "storyType": "material",
+    "keyFinding": "Tetra's aluminium layer is grid-sensitive; Sweden vs China produced shifts the total",
+    "context": "Tetra's aluminium layer is grid-sensitive; Sweden vs China produced shifts the total",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-016": {
+    "storyType": "material",
+    "keyFinding": "Heavy glass + air freight overwhelms packaging choice \u2014 transport mode is the dominant lever",
+    "context": "Heavy glass + air freight overwhelms packaging choice \u2014 transport mode is the dominant lever",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-017": {
+    "storyType": "material",
+    "keyFinding": "Premium imported water \u2014 air freight makes packaging optimisation irrelevant",
+    "context": "Premium imported water \u2014 air freight makes packaging optimisation irrelevant",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-018": {
+    "storyType": "material",
+    "keyFinding": "Same fruit category, three transport scenarios \u2014 air freight dominates regardless of packaging",
+    "context": "Same fruit category, three transport scenarios \u2014 air freight dominates regardless of packaging",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-019": {
+    "storyType": "lifecycle",
+    "keyFinding": "Coffee logistics flip \u2014 retail-ready air freight vs bulk-sea + domestic roast changes the winner",
+    "context": "Coffee logistics flip \u2014 retail-ready air freight vs bulk-sea + domestic roast changes the winner",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SENS-020": {
+    "storyType": "lifecycle",
+    "keyFinding": "Retort wins by eliminating cold-chain logistics \u2014 packaging carbon is more than offset",
+    "context": "Retort wins by eliminating cold-chain logistics \u2014 packaging carbon is more than offset",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "SENS-021": {
+    "storyType": "material",
+    "keyFinding": "Bigger isn't always better \u2014 food spoilage reverses the packaging-efficiency argument",
+    "context": "Bigger isn't always better \u2014 food spoilage reverses the packaging-efficiency argument",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-022": {
+    "storyType": "weight",
+    "keyFinding": "For wet/perishable categories, single-serve can beat bulk on a per-served-portion basis",
+    "context": "For wet/perishable categories, single-serve can beat bulk on a per-served-portion basis",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-023": {
+    "storyType": "weight",
+    "keyFinding": "Smaller, dose-controlled pack wins when adherence and waste are accounted for",
+    "context": "Smaller, dose-controlled pack wins when adherence and waste are accounted for",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-024": {
+    "storyType": "weight",
+    "keyFinding": "For trial/sampling, single-serve packs avoid the bulk-waste failure mode of a rejected full-size",
+    "context": "For trial/sampling, single-serve packs avoid the bulk-waste failure mode of a rejected full-size",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-025": {
+    "storyType": "material",
+    "keyFinding": "When food-safety / hygiene rules force discarding open bulk, sachets can actually win",
+    "context": "When food-safety / hygiene rules force discarding open bulk, sachets can actually win",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-026": {
+    "storyType": "weight",
+    "keyFinding": "Premium fragrance \u2014 refillable system wins easily because single-use glass weight is enormous",
+    "context": "Premium fragrance \u2014 refillable system wins easily because single-use glass weight is enormous",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "SENS-027": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Premium aesthetics doubled packaging weight \u2014 purely a brand-vs-sustainability trade",
+    "context": "Premium aesthetics doubled packaging weight \u2014 purely a brand-vs-sustainability trade",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SENS-028": {
+    "storyType": "material",
+    "keyFinding": "Wine bottle weight is purely aesthetic \u2014 every 100g of glass = ~75g CO2e",
+    "context": "Wine bottle weight is purely aesthetic \u2014 every 100g of glass = ~75g CO2e",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-029": {
+    "storyType": "material",
+    "keyFinding": "Spirits premium-look bottle doubles material vs lightweight rGlass",
+    "context": "Spirits premium-look bottle doubles material vs lightweight rGlass",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SENS-030": {
+    "storyType": "weight",
+    "keyFinding": "Premium beauty \u2014 refillable aluminium beats single-use heavy glass even at modest fill counts",
+    "context": "Premium beauty \u2014 refillable aluminium beats single-use heavy glass even at modest fill counts",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COF-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three all-bio routes for the same premium coffee SUP",
+    "context": "Three all-bio routes for the same premium coffee SUP",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Isolates valve material \u2014 small mass, big chemistry decision",
+    "context": "Isolates valve material \u2014 small mass, big chemistry decision",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-017": {
+    "storyType": "material",
+    "keyFinding": "Number of layers vs barrier requirement \u2014 premium pack often over-engineered",
+    "context": "Number of layers vs barrier requirement \u2014 premium pack often over-engineered",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-018": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lifecycle comparison across compostable vs recyclable closed-loop",
+    "context": "Lifecycle comparison across compostable vs recyclable closed-loop",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COF-019": {
+    "storyType": "material",
+    "keyFinding": "Two recyclable-by-design barrier approaches \u2014 emerging tech head-to-head",
+    "context": "Two recyclable-by-design barrier approaches \u2014 emerging tech head-to-head",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Multipack outer vs bigger single SUP \u2014 material intensity comparison",
+    "context": "Multipack outer vs bigger single SUP \u2014 material intensity comparison",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-021": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three bio routes for same coffee SUP \u2014 recyclable vs home vs industrial compost",
+    "context": "Three bio routes for same coffee SUP \u2014 recyclable vs home vs industrial compost",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "COF-022": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Inbound green-bean transport pack \u2014 bio liner vs traditional",
+    "context": "Inbound green-bean transport pack \u2014 bio liner vs traditional",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-023": {
+    "storyType": "weight",
+    "keyFinding": "Outer pack format for capsules \u2014 minimal flow wrap vs premium tin",
+    "context": "Outer pack format for capsules \u2014 minimal flow wrap vs premium tin",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COF-024": {
+    "storyType": "lifecycle",
+    "keyFinding": "Long-cycle reuse comparison \u2014 ceramic vs glass vs single-use",
+    "context": "Long-cycle reuse comparison \u2014 ceramic vs glass vs single-use",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COF-025": {
+    "storyType": "material",
+    "keyFinding": "Nitro pressure requirement constrains the format set",
+    "context": "Nitro pressure requirement constrains the format set",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-026": {
+    "storyType": "material",
+    "keyFinding": "Printing energy and ink load sensitivity on a coffee SUP",
+    "context": "Printing energy and ink load sensitivity on a coffee SUP",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "COF-027": {
+    "storyType": "weight",
+    "keyFinding": "Concentrate vs full beverage \u2014 eliminates 80% of water transport",
+    "context": "Concentrate vs full beverage \u2014 eliminates 80% of water transport",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COF-028": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Paper aesthetic vs actual paper material \u2014 recycling stream impact",
+    "context": "Paper aesthetic vs actual paper material \u2014 recycling stream impact",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COF-029": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Single bulk sack vs multipack \u2014 B2B foodservice supply chain",
+    "context": "Single bulk sack vs multipack \u2014 B2B foodservice supply chain",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-015": {
+    "storyType": "weight",
+    "keyFinding": "Vitamin pill bottle \u2014 bio drop-in, premium glass, recycled \u2014 three sustainability profiles",
+    "context": "Vitamin pill bottle \u2014 bio drop-in, premium glass, recycled \u2014 three sustainability profiles",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-016": {
+    "storyType": "weight",
+    "keyFinding": "PLA bottle for vitamins \u2014 moisture sensitivity vs compostability",
+    "context": "PLA bottle for vitamins \u2014 moisture sensitivity vs compostability",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pharma blister format set \u2014 three barriers and three EOL routes",
+    "context": "Pharma blister format set \u2014 three barriers and three EOL routes",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-018": {
+    "storyType": "material",
+    "keyFinding": "Integrated desiccant simplifies bill of materials but blocks recycling",
+    "context": "Integrated desiccant simplifies bill of materials but blocks recycling",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "VIT-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three sustainable routes for stick packs",
+    "context": "Three sustainable routes for stick packs",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "VIT-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Emerging bio-composite alternative to plastic powder tub",
+    "context": "Emerging bio-composite alternative to plastic powder tub",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-021": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Protein bar wrap \u2014 three bio strategies",
+    "context": "Protein bar wrap \u2014 three bio strategies",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "VIT-022": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Effervescent moisture barrier requirement \u2014 bio-PP drop-in alternative",
+    "context": "Effervescent moisture barrier requirement \u2014 bio-PP drop-in alternative",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-023": {
+    "storyType": "weight",
+    "keyFinding": "Liquid supplement refill \u2014 concentrate pods + reused glass",
+    "context": "Liquid supplement refill \u2014 concentrate pods + reused glass",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pet supplement category \u2014 sustainability options",
+    "context": "Pet supplement category \u2014 sustainability options",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "VIT-025": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Sports gel \u2014 high barrier requirement for energy/electrolyte stability",
+    "context": "Sports gel \u2014 high barrier requirement for energy/electrolyte stability",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-026": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Industry sub-segment matters \u2014 pharma vs OTC retail use very different formats",
+    "context": "Industry sub-segment matters \u2014 pharma vs OTC retail use very different formats",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "VIT-027": {
+    "storyType": "material",
+    "keyFinding": "Material intensity per dose \u2014 bigger pack wins (no spoilage angle for tablets)",
+    "context": "Material intensity per dose \u2014 bigger pack wins (no spoilage angle for tablets)",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "VIT-028": {
+    "storyType": "weight",
+    "keyFinding": "Premium adaptogen format \u2014 niche where reuse can work",
+    "context": "Premium adaptogen format \u2014 niche where reuse can work",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "VIT-029": {
+    "storyType": "weight",
+    "keyFinding": "Refillable tube model \u2014 refill sachets vs new tubes",
+    "context": "Refillable tube model \u2014 refill sachets vs new tubes",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three bio refill SUP material strategies",
+    "context": "Three bio refill SUP material strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "REF-014": {
+    "storyType": "lifecycle",
+    "keyFinding": "Same delivery system at 1/5/10 cycles \u2014 break-even point shifts with refill count",
+    "context": "Same delivery system at 1/5/10 cycles \u2014 break-even point shifts with refill count",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three approaches to single-dose concentrate",
+    "context": "Three approaches to single-dose concentrate",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "REF-016": {
+    "storyType": "lifecycle",
+    "keyFinding": "In-store BYO vs at-home concentrate dilution \u2014 store logistics vs home convenience",
+    "context": "In-store BYO vs at-home concentrate dilution \u2014 store logistics vs home convenience",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Refill cartridge materials \u2014 three recyclable streams",
+    "context": "Refill cartridge materials \u2014 three recyclable streams",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "REF-018": {
+    "storyType": "lifecycle",
+    "keyFinding": "Concentrate pods + reused bottle vs single-use PET",
+    "context": "Concentrate pods + reused bottle vs single-use PET",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-019": {
+    "storyType": "weight",
+    "keyFinding": "Bulk dispenser eliminates consumer packaging \u2014 store logistics vs delivered",
+    "context": "Bulk dispenser eliminates consumer packaging \u2014 store logistics vs delivered",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-020": {
+    "storyType": "weight",
+    "keyFinding": "Three personal-care delivery models for shampoo",
+    "context": "Three personal-care delivery models for shampoo",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-021": {
+    "storyType": "lifecycle",
+    "keyFinding": "Mono-PE SUP at scale beats refill canister system at this fill rate",
+    "context": "Mono-PE SUP at scale beats refill canister system at this fill rate",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "REF-022": {
+    "storyType": "weight",
+    "keyFinding": "B2B closed-loop reusable IBC \u2014 massive material savings vs single-use bottles",
+    "context": "B2B closed-loop reusable IBC \u2014 massive material savings vs single-use bottles",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-023": {
+    "storyType": "weight",
+    "keyFinding": "Foodservice deposit scheme \u2014 return-rate sensitivity",
+    "context": "Foodservice deposit scheme \u2014 return-rate sensitivity",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Premium beauty refillable \u2014 material choice within refillable system",
+    "context": "Premium beauty refillable \u2014 material choice within refillable system",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "REF-025": {
+    "storyType": "weight",
+    "keyFinding": "Concentrate format choice within the refill space",
+    "context": "Concentrate format choice within the refill space",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-026": {
+    "storyType": "weight",
+    "keyFinding": "B2B salon supply \u2014 closed-loop cartridge model",
+    "context": "B2B salon supply \u2014 closed-loop cartridge model",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "REF-027": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bio vs recyclable in the refill use case \u2014 paper bio is heavier",
+    "context": "Bio vs recyclable in the refill use case \u2014 paper bio is heavier",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "All-bio multilayer SUP \u2014 drop-in replacement for traditional film",
+    "context": "All-bio multilayer SUP \u2014 drop-in replacement for traditional film",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three bio-SUP barrier strategies for the same speciality food",
+    "context": "Three bio-SUP barrier strategies for the same speciality food",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Spout material decision in liquid SUP \u2014 small mass, isolatable carbon",
+    "context": "Spout material decision in liquid SUP \u2014 small mass, isolatable carbon",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-017": {
+    "storyType": "material",
+    "keyFinding": "Pack-size scaling \u2014 per-kg material intensity drops with bigger packs",
+    "context": "Pack-size scaling \u2014 per-kg material intensity drops with bigger packs",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-018": {
+    "storyType": "material",
+    "keyFinding": "Closure type in mono-PE SUP \u2014 recyclability preserved across all",
+    "context": "Closure type in mono-PE SUP \u2014 recyclability preserved across all",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-019": {
+    "storyType": "material",
+    "keyFinding": "Two oxide-coated mono-PE high-barrier approaches \u2014 both recyclable",
+    "context": "Two oxide-coated mono-PE high-barrier approaches \u2014 both recyclable",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Retort pouch \u2014 three strategies for hot-fill stability with sustainability",
+    "context": "Retort pouch \u2014 three strategies for hot-fill stability with sustainability",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-021": {
+    "storyType": "material",
+    "keyFinding": "PCR content food-contact constraint inside mono-PE SUP",
+    "context": "PCR content food-contact constraint inside mono-PE SUP",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-022": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Visual kraft aesthetic vs recyclable mono \u2014 print can mimic without sacrificing recyclability",
+    "context": "Visual kraft aesthetic vs recyclable mono \u2014 print can mimic without sacrificing recyclability",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "SUP-023": {
+    "storyType": "material",
+    "keyFinding": "Window material \u2014 mixed materials block recyclability vs cellulose-compatible",
+    "context": "Window material \u2014 mixed materials block recyclability vs cellulose-compatible",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Frozen application \u2014 bio-PE drop-in or PA tie for puncture resistance",
+    "context": "Frozen application \u2014 bio-PE drop-in or PA tie for puncture resistance",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-025": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Convenience portion control vs material intensity",
+    "context": "Convenience portion control vs material intensity",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "SUP-026": {
+    "storyType": "material",
+    "keyFinding": "Carbon-black pigment defeats sorting \u2014 same SUP, different EOL",
+    "context": "Carbon-black pigment defeats sorting \u2014 same SUP, different EOL",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-027": {
+    "storyType": "material",
+    "keyFinding": "Reclosure options \u2014 three mono-PE compatible closures",
+    "context": "Reclosure options \u2014 three mono-PE compatible closures",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "SUP-028": {
+    "storyType": "material",
+    "keyFinding": "PCR content sensitivity test for mono-PE SUP",
+    "context": "PCR content sensitivity test for mono-PE SUP",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three compostable/recyclable routes \u2014 paper much heavier than bio films",
+    "context": "Three compostable/recyclable routes \u2014 paper much heavier than bio films",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-015": {
+    "storyType": "lifecycle",
+    "keyFinding": "Materials for closed-loop ecommerce reuse systems",
+    "context": "Materials for closed-loop ecommerce reuse systems",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "ECM-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three protective-mailer approaches",
+    "context": "Three protective-mailer approaches",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "ECM-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Cold-chain ecomm \u2014 three insulation strategies",
+    "context": "Cold-chain ecomm \u2014 three insulation strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-018": {
+    "storyType": "material",
+    "keyFinding": "Print ink load sensitivity on mailer carbon",
+    "context": "Print ink load sensitivity on mailer carbon",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Right-sizing the box eliminates dunnage carbon",
+    "context": "Right-sizing the box eliminates dunnage carbon",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ECM-020": {
+    "storyType": "weight",
+    "keyFinding": "Inner-bag elimination \u2014 clean-product handling determines feasibility",
+    "context": "Inner-bag elimination \u2014 clean-product handling determines feasibility",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-021": {
+    "storyType": "material",
+    "keyFinding": "Brand-experience packaging mass vs functional minimum",
+    "context": "Brand-experience packaging mass vs functional minimum",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-022": {
+    "storyType": "material",
+    "keyFinding": "B2B bulk consolidation vs individual ecommerce mailers",
+    "context": "B2B bulk consolidation vs individual ecommerce mailers",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-023": {
+    "storyType": "material",
+    "keyFinding": "Gauge sensitivity \u2014 30% material variation at constant function",
+    "context": "Gauge sensitivity \u2014 30% material variation at constant function",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-024": {
+    "storyType": "weight",
+    "keyFinding": "Fragile item \u2014 paper outperforms poly only with adequate cushioning",
+    "context": "Fragile item \u2014 paper outperforms poly only with adequate cushioning",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-025": {
+    "storyType": "material",
+    "keyFinding": "Right-sizing \u2014 biggest box-impact lever in ecommerce",
+    "context": "Right-sizing \u2014 biggest box-impact lever in ecommerce",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "ECM-026": {
+    "storyType": "weight",
+    "keyFinding": "B2B returnable tote scheme \u2014 works in closed-loop DC, harder for ecommerce",
+    "context": "B2B returnable tote scheme \u2014 works in closed-loop DC, harder for ecommerce",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-027": {
+    "storyType": "weight",
+    "keyFinding": "Subscription delivery \u2014 three logistics formats",
+    "context": "Subscription delivery \u2014 three logistics formats",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ECM-028": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tape choice \u2014 small mass, blocks paper recyclability if plastic",
+    "context": "Tape choice \u2014 small mass, blocks paper recyclability if plastic",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three retort strategies \u2014 incumbent, recyclable evolution, bio",
+    "context": "Three retort strategies \u2014 incumbent, recyclable evolution, bio",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "High-barrier paper coatings \u2014 three flavours of barrier",
+    "context": "High-barrier paper coatings \u2014 three flavours of barrier",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three bio-aware solutions for hot-fill / microwave ready meals",
+    "context": "Three bio-aware solutions for hot-fill / microwave ready meals",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-017": {
+    "storyType": "material",
+    "keyFinding": "Two mono recyclable streams \u2014 PP rigid recycling vs PE soft-plastics",
+    "context": "Two mono recyclable streams \u2014 PP rigid recycling vs PE soft-plastics",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-018": {
+    "storyType": "weight",
+    "keyFinding": "Fresh meat \u2014 vacuum vs MAP vs paper-pulp MAP",
+    "context": "Fresh meat \u2014 vacuum vs MAP vs paper-pulp MAP",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Hard cheese \u2014 three retail strategies",
+    "context": "Hard cheese \u2014 three retail strategies",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "TCH-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Frozen pouch barrier \u2014 three approaches",
+    "context": "Frozen pouch barrier \u2014 three approaches",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "TCH-021": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Microwave susceptor strategies \u2014 plastic vs paper",
+    "context": "Microwave susceptor strategies \u2014 plastic vs paper",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-022": {
+    "storyType": "material",
+    "keyFinding": "Three aseptic carton suppliers \u2014 including Al-free alternative",
+    "context": "Three aseptic carton suppliers \u2014 including Al-free alternative",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "TCH-023": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bio retort vs recyclable retort \u2014 emerging tech head-to-head",
+    "context": "Bio retort vs recyclable retort \u2014 emerging tech head-to-head",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "High-barrier crisp pack \u2014 three substrate strategies",
+    "context": "High-barrier crisp pack \u2014 three substrate strategies",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "TCH-025": {
+    "storyType": "weight",
+    "keyFinding": "Hot-fill barrier requirement \u2014 three rigid containers",
+    "context": "Hot-fill barrier requirement \u2014 three rigid containers",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "TCH-026": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Meal kit \u2014 incumbent multi-material vs all-paper-bio",
+    "context": "Meal kit \u2014 incumbent multi-material vs all-paper-bio",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-027": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Foil-look confectionery wrap \u2014 three materials",
+    "context": "Foil-look confectionery wrap \u2014 three materials",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "TCH-028": {
+    "storyType": "material",
+    "keyFinding": "Mono-PP high-barrier coffee SUP \u2014 recyclable evolution",
+    "context": "Mono-PP high-barrier coffee SUP \u2014 recyclable evolution",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "FLX-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Four-way snack flow wrap \u2014 incumbent BOPP plus three alternatives",
+    "context": "Four-way snack flow wrap \u2014 incumbent BOPP plus three alternatives",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-015": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Twist wrap \u2014 three bio strategies",
+    "context": "Twist wrap \u2014 three bio strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-016": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Four routes for snack flow wrap \u2014 clear benchmark",
+    "context": "Four routes for snack flow wrap \u2014 clear benchmark",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Bakery \u2014 moisture-resistant strategies",
+    "context": "Bakery \u2014 moisture-resistant strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-018": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Frozen veg pouch \u2014 three strategies",
+    "context": "Frozen veg pouch \u2014 three strategies",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Dry pasta \u2014 three retail formats",
+    "context": "Dry pasta \u2014 three retail formats",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tea pyramid \u2014 mesh material choices",
+    "context": "Tea pyramid \u2014 mesh material choices",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-021": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Tea bag small components \u2014 material choice",
+    "context": "Tea bag small components \u2014 material choice",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-022": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Condiment sachet \u2014 three bio routes",
+    "context": "Condiment sachet \u2014 three bio routes",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-023": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Cracker \u2014 multi-component elimination test",
+    "context": "Cracker \u2014 multi-component elimination test",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-024": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Cereal inner \u2014 material choice",
+    "context": "Cereal inner \u2014 material choice",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-025": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Individual chocolate wrap \u2014 three bio options",
+    "context": "Individual chocolate wrap \u2014 three bio options",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "FLX-026": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Frozen application \u2014 paper vs mono-PE",
+    "context": "Frozen application \u2014 paper vs mono-PE",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-027": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Chocolate bar wrap \u2014 three commercial-ready routes",
+    "context": "Chocolate bar wrap \u2014 three commercial-ready routes",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "FLX-028": {
+    "storyType": "weight",
+    "keyFinding": "Material intensity per kg \u2014 bigger flow wraps more efficient",
+    "context": "Material intensity per kg \u2014 bigger flow wraps more efficient",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "PET-011": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Premium fresh-frozen subscription model",
+    "context": "Premium fresh-frozen subscription model",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pet treat sachet \u2014 three sustainable options",
+    "context": "Pet treat sachet \u2014 three sustainable options",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Large dry pet food bag \u2014 three material strategies",
+    "context": "Large dry pet food bag \u2014 three material strategies",
+    "primarySection": "eol",
+    "primaryTitle": "End-of-life is where this comparison is won and lost",
+    "primaryWhy": "Upstream carbon costs are similar across these options. The decisive variable is where the packaging actually ends up after use."
+  },
+  "PET-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Three bio routes for pet treat pouch",
+    "context": "Three bio routes for pet treat pouch",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-015": {
+    "storyType": "material",
+    "keyFinding": "Multipack tray choice \u2014 material intensity comparison",
+    "context": "Multipack tray choice \u2014 material intensity comparison",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "PET-016": {
+    "storyType": "material",
+    "keyFinding": "Pet supplement format intensity",
+    "context": "Pet supplement format intensity",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "PET-017": {
+    "storyType": "material",
+    "keyFinding": "Subscription bulk vs retail multipack",
+    "context": "Subscription bulk vs retail multipack",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "PET-018": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Cat litter bag \u2014 three formats",
+    "context": "Cat litter bag \u2014 three formats",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-019": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Compostable kibble bag \u2014 emerging category",
+    "context": "Compostable kibble bag \u2014 emerging category",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "PET-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Scoop inclusion \u2014 small mass, blocks recyclability",
+    "context": "Scoop inclusion \u2014 small mass, blocks recyclability",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BEV-013": {
+    "storyType": "weight",
+    "keyFinding": "PEF \u2014 emerging 100% bio-PET drop-in",
+    "context": "PEF \u2014 emerging 100% bio-PET drop-in",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-014": {
+    "storyType": "material",
+    "keyFinding": "Bio-PET drop-in vs incumbents",
+    "context": "Bio-PET drop-in vs incumbents",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-015": {
+    "storyType": "weight",
+    "keyFinding": "Wine bottle weight options \u2014 premium aesthetics vs sustainability",
+    "context": "Wine bottle weight options \u2014 premium aesthetics vs sustainability",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-016": {
+    "storyType": "material",
+    "keyFinding": "Spirits \u2014 premium aesthetic vs eco-design",
+    "context": "Spirits \u2014 premium aesthetic vs eco-design",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-017": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Branded bio-PET case \u2014 30% bio drop-in",
+    "context": "Branded bio-PET case \u2014 30% bio drop-in",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "BEV-018": {
+    "storyType": "weight",
+    "keyFinding": "Carton",
+    "context": "Carton",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-019": {
+    "storyType": "weight",
+    "keyFinding": "Beer \u2014 returnable glass system competing with single-use",
+    "context": "Beer \u2014 returnable glass system competing with single-use",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-020": {
+    "storyType": "weight",
+    "keyFinding": "Bag-in-box wine \u2014 major material reduction at 3L",
+    "context": "Bag-in-box wine \u2014 major material reduction at 3L",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "BEV-021": {
+    "storyType": "material",
+    "keyFinding": "Aluminium format \u2014 bottle vs can material intensity",
+    "context": "Aluminium format \u2014 bottle vs can material intensity",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  },
+  "BEV-022": {
+    "storyType": "weight",
+    "keyFinding": "Carbonated 2L format \u2014 PET dominates but Tetra emerging",
+    "context": "Carbonated 2L format \u2014 PET dominates but Tetra emerging",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-013": {
+    "storyType": "weight",
+    "keyFinding": "Premium skincare \u2014 three sustainability routes",
+    "context": "Premium skincare \u2014 three sustainability routes",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-014": {
+    "storyType": "lifecycle",
+    "keyFinding": "Lipstick \u2014 refillable bio insert system",
+    "context": "Lipstick \u2014 refillable bio insert system",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-015": {
+    "storyType": "weight",
+    "keyFinding": "Premium skincare lifecycle \u2014 modelled at 5 fills",
+    "context": "Premium skincare lifecycle \u2014 modelled at 5 fills",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-016": {
+    "storyType": "lifecycle",
+    "keyFinding": "Mascara \u2014 refillable system",
+    "context": "Mascara \u2014 refillable system",
+    "primarySection": "carbon",
+    "primaryTitle": "Cumulative carbon across the lifecycle",
+    "primaryWhy": "The lifecycle math depends on how many cycles, fills, or uses each option delivers before disposal."
+  },
+  "COS-017": {
+    "storyType": "weight",
+    "keyFinding": "Premium fragrance \u2014 refillable system massively beats single-use",
+    "context": "Premium fragrance \u2014 refillable system massively beats single-use",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-018": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Deodorant \u2014 three formats including refillable",
+    "context": "Deodorant \u2014 three formats including refillable",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COS-019": {
+    "storyType": "weight",
+    "keyFinding": "Powder compact \u2014 three durability options",
+    "context": "Powder compact \u2014 three durability options",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-020": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Sheet mask sachet \u2014 three sustainability routes",
+    "context": "Sheet mask sachet \u2014 three sustainability routes",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "COS-021": {
+    "storyType": "weight",
+    "keyFinding": "Premium beauty \u2014 solid bar emerging category",
+    "context": "Premium beauty \u2014 solid bar emerging category",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "COS-022": {
+    "storyType": "weight",
+    "keyFinding": "Premium lotion \u2014 material strategies",
+    "context": "Premium lotion \u2014 material strategies",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-011": {
+    "storyType": "weight",
+    "keyFinding": "Cosmetics kit \u2014 massive consolidation potential",
+    "context": "Cosmetics kit \u2014 massive consolidation potential",
+    "primarySection": "weight",
+    "primaryTitle": "Material weight per unit",
+    "primaryWhy": "When the same product can be delivered in formats varying widely by weight, the lightest option typically wins on carbon."
+  },
+  "ELM-012": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Same speciality product \u2014 multi-component bio vs single bio pouch",
+    "context": "Same speciality product \u2014 multi-component bio vs single bio pouch",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ELM-013": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Pharma \u2014 eliminating bottle + cotton when blister is sufficient",
+    "context": "Pharma \u2014 eliminating bottle + cotton when blister is sufficient",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ELM-014": {
+    "storyType": "counterintuitive",
+    "keyFinding": "Snack \u2014 portion control vs material intensity",
+    "context": "Snack \u2014 portion control vs material intensity",
+    "primarySection": "composition",
+    "primaryTitle": "Material composition reveals the story",
+    "primaryWhy": "Recycled and renewable content materially change the cradle-to-grave carbon profile."
+  },
+  "ELM-015": {
+    "storyType": "material",
+    "keyFinding": "Tea pack consolidation \u2014 eliminate envelopes and outer carton",
+    "context": "Tea pack consolidation \u2014 eliminate envelopes and outer carton",
+    "primarySection": "carbon",
+    "primaryTitle": "Annual carbon footprint",
+    "primaryWhy": "Total greenhouse-gas emissions across the full lifecycle for each option at standard annual volume."
+  }
+}
