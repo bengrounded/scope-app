@@ -64,37 +64,98 @@ export interface ReportMeta {
   primaryWhy: string;
 }
 
-export interface ComputeRequest {
-  tenantId?: string;
-  description?: string;
-  options?: Array<{
-    name?: string;
-    format?: string;
+// ===== Engine-shape types (mirror scope_compute.py contract) =====
+
+export interface CompositionEntry {
+  material_library_entry: string;
+  percent: number;
+  recycled_pair?: string;
+}
+
+export interface EngineProductOption {
+  name: string;
+  weight_per_unit_g: number;
+  composition: CompositionEntry[];
+  manufacturing_process: string;
+  manufacturing_grid: string;
+  eol_pathway: string;
+  annual_units?: number;
+  recycled_content_pct?: number;
+  renewable_content_pct?: number;
+  pre_consumer_scrap_frac?: number;
+  utility?: number;
+  format?: string;
+  /** Display-only fields the engine ignores but the renderer needs. */
+  display?: {
     material?: string;
     structure?: string;
-    weight?: number;
-    region?: string;
+  };
+}
+
+export interface EngineComputeRequest {
+  options: EngineProductOption[];
+  region?: string;
+  annual_units?: number;
+  tenant_id?: string;
+  description?: string;
+}
+
+export interface EngineComputeResponse {
+  options: Array<{
+    name: string;
+    carbon_footprint: {
+      total_kg: number;
+      raw_materials_kg: number;
+      manufacturing_kg: number;
+      logistics_kg: number;
+      end_of_life_kg: number;
+      per_unit_kg: number;
+      intensity_kg_per_kg_material: number;
+    };
+    material_composition: {
+      recycled_pct: number;
+      renewable_pct: number;
+      fossil_pct: number;
+    };
+    circularity: {
+      mci_score: number;
+      mci_pct: number;
+      decomposition: Record<string, number>;
+    };
+    end_of_life: {
+      recycled_kg: number;
+      composted_kg: number;
+      landfilled_kg: number;
+      incinerated_kg: number;
+    };
   }>;
-  packSize?: string;
-  industry?: string;
+  region: string;
+}
+
+export interface LibraryCatalog {
+  materials: string[];
+  manufacturing_processes: string[];
+  electricity_grids: string[];
+  eol_pathways: string[];
+}
+
+// ===== Build-route I/O =====
+
+export interface BuildRequest {
+  query: string;
   region?: string;
   annualVolume?: number;
+  packSize?: string;
+  industry?: string;
 }
 
-export interface ComputeResponse {
-  reportId: string;
-  status: "stub" | "computed";
-  message?: string;
-}
-
-export interface MaterialLibraryEntry {
-  id: string;
-  name: string;
-  category: string;
-  density: number;
-  carbonPerGram: number;
-  fossilPct: number;
-  recycledPct: number;
-  renewablePct: number;
-  notes?: string;
+export interface BuildResponse {
+  report: Report;
+  meta: ReportMeta;
+  trace?: {
+    parserModel: string;
+    narrativeModel: string;
+    parsedOptionsCount: number;
+    warnings: string[];
+  };
 }

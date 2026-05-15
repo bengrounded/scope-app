@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import type { BuildResponse, Option, PrimarySection as PrimarySectionType } from "@/lib/types";
+import { bestOption, carbonDeltaPct } from "@/lib/scoring";
+import { focusClassForArea } from "@/lib/focus";
+import Lede from "./Lede";
+import OptionCard from "./OptionCard";
+import Equivalencies from "./Equivalencies";
+import PrimarySection from "./PrimarySection";
+import SupportingCard from "./SupportingCard";
+import Recommendation from "./Recommendation";
 
 const SUGGESTIONS = [
   "Compare a refill pouch to a single-use HDPE bottle for shampoo",
@@ -31,8 +39,23 @@ const REGIONS = [
   "Global average",
 ];
 
+const ALL_SECTIONS: PrimarySectionType[] = [
+  "weight",
+  "carbon",
+  "composition",
+  "eol",
+  "circularity",
+];
+
+function regionFromUI(label: string): string | undefined {
+  if (label.startsWith("Australia")) return "Australia";
+  if (label === "United Kingdom") return "United Kingdom";
+  if (label === "European Union") return "European average";
+  if (label === "United States") return "USA";
+  return undefined;
+}
+
 export default function BuilderForm() {
-  const router = useRouter();
   const [description, setDescription] = useState("");
   const [format, setFormat] = useState("");
   const [packSize, setPackSize] = useState("");
@@ -43,35 +66,73 @@ export default function BuilderForm() {
   const [region, setRegion] = useState(REGIONS[0]);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<BuildResponse | null>(null);
 
   async function handleSubmit() {
     setSubmitting(true);
     setError(null);
+    setResult(null);
     try {
-      const res = await fetch("/api/compute", {
+      // Synthesize a query from whichever side the user filled in. The
+      // structured fields concatenate into a sentence the parser can read.
+      const structuredBits = [
+        format && `Format: ${format}`,
+        packSize && `Pack size: ${packSize}`,
+        industry && `Industry: ${industry}`,
+        (optionA || optionB || optionC) &&
+          `Compare: ${[optionA, optionB, optionC].filter(Boolean).join(" vs ")}`,
+      ].filter(Boolean);
+      const query =
+        description.trim() ||
+        structuredBits.join(". ") ||
+        "";
+      if (query.length < 5) {
+        throw new Error("Add a description or fill in the form to compare.");
+      }
+
+      const res = await fetch("/api/build", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          description,
-          packSize,
-          industry,
-          region,
-          options: [
-            { format, material: optionA },
-            { format, material: optionB },
-            optionC ? { format, material: optionC } : undefined,
-          ].filter((o): o is { format: string; material: string } => Boolean(o?.material)),
+          query,
+          region: regionFromUI(region),
+          packSize: packSize || undefined,
+          industry: industry || undefined,
         }),
       });
-      if (!res.ok) throw new Error(`Compute failed: ${res.status}`);
-      const data = (await res.json()) as { reportId?: string };
-      if (!data.reportId) throw new Error("No report id returned");
-      router.push(`/reports/${data.reportId}`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(
+          body.detail || body.error || `Build failed: ${res.status}`,
+        );
+      }
+      const data = (await res.json()) as BuildResponse;
+      setResult(data);
+      // Scroll the result into view.
+      requestAnimationFrame(() =>
+        document
+          .getElementById("scope-build-result")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      );
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Unknown error");
     } finally {
       setSubmitting(false);
     }
+  }
+
+  function resetForBuildAnother() {
+    setResult(null);
+    setError(null);
+  }
+
+  if (result) {
+    return (
+      <BuilderResultView
+        data={result}
+        onReset={resetForBuildAnother}
+      />
+    );
   }
 
   return (
@@ -151,7 +212,7 @@ export default function BuilderForm() {
           disabled={submitting}
           className="mt-4 w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-50"
         >
-          {submitting ? "Generating…" : "Generate report →"}
+          {submitting ? "Generating… (≈10-25s)" : "Generate report →"}
         </button>
         {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
         <p className="text-xs text-slate-500 mt-3 text-center">
@@ -162,10 +223,134 @@ export default function BuilderForm() {
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function BuilderResultView({
+  data,
+  onReset,
+}: {
+  data: BuildResponse;
+  onReset: () => void;
+}) {
+  const { report, meta, trace } = data;
+  const best = bestOption(report.options, "carbonKg");
+  const worst = bestOption(report.options, "carbonKg", false);
+  const bestMCI = bestOption(report.options, "mci", false);
+  const savings = Math.max(0, worst.val - best.val);
+  const delta = carbonDeltaPct(report.options);
+  const optionColsClass =
+    report.options.length === 3
+      ? "grid-cols-1 md:grid-cols-3"
+      : report.options.length === 2
+        ? "grid-cols-1 md:grid-cols-2"
+        : "grid-cols-1";
+  const supporting = ALL_SECTIONS.filter((s) => s !== meta.primarySection);
+
+  return (
+    <div id="scope-build-result">
+      <div className="flex items-center gap-3 mb-6">
+        <button
+          type="button"
+          onClick={onReset}
+          className="text-sm text-slate-600 hover:text-indigo-600"
+        >
+          ← Build another
+        </button>
+        <div className="h-5 w-px bg-slate-200" />
+        <span className="text-xs text-slate-400 font-mono">{report.id}</span>
+        <span className={`chip ${focusClassForArea(report.focusArea)}`}>
+          {report.focusArea}
+        </span>
+        <span className="chip bg-slate-100 text-slate-600">
+          {report.comparisonType}
+        </span>
+        <div className="flex-1" />
+        <div className="flex items-center gap-1.5 text-xs text-slate-500">
+          <span className="w-2 h-2 rounded-full bg-amber-500" />
+          {report.confidence.charAt(0).toUpperCase() +
+            report.confidence.slice(1)}{" "}
+          confidence
+        </div>
+      </div>
+
+      <section className="fade-in">
+        <Lede report={report} meta={meta} />
+        <div className={`grid gap-4 ${optionColsClass} mb-10`}>
+          {report.options.map((o: Option, i: number) => (
+            <OptionCard
+              key={`${o.name}-${i}`}
+              option={o}
+              isBestCarbon={i === best.idx && report.options.length > 1}
+              isWorstCarbon={
+                i === worst.idx &&
+                report.options.length > 1 &&
+                best.idx !== worst.idx
+              }
+              isBestMCI={i === bestMCI.idx && report.options.length > 1}
+            />
+          ))}
+        </div>
+        <Equivalencies
+          savingsKg={savings}
+          bestName={report.options[best.idx]?.name ?? ""}
+          worstName={report.options[worst.idx]?.name ?? ""}
+          pct={delta}
+        />
+      </section>
+
+      <section
+        className="py-10 mt-6 fade-in"
+        style={{
+          background: "linear-gradient(180deg, white 0%, #FAFBFC 100%)",
+        }}
+      >
+        <PrimarySection report={report} meta={meta} />
+      </section>
+
+      <section className="py-10 fade-in">
+        <h2 className="text-2xl font-bold mb-1">The complete picture</h2>
+        <p className="text-slate-600 mb-8 max-w-2xl">
+          The data behind the headline — every relevant metric for this
+          comparison.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {supporting.map((section) => (
+            <SupportingCard
+              key={section}
+              section={section}
+              options={report.options}
+            />
+          ))}
+        </div>
+        <Recommendation report={report} meta={meta} />
+      </section>
+
+      {trace && trace.warnings.length > 0 && (
+        <div className="my-6 p-4 bg-amber-50 border border-amber-200 rounded-lg text-xs text-amber-900">
+          <div className="font-semibold mb-1">
+            Parser warnings ({trace.warnings.length})
+          </div>
+          <ul className="list-disc pl-4 space-y-0.5">
+            {trace.warnings.map((w, i) => (
+              <li key={i}>{w}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function Field({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
     <div>
-      <label className="text-xs font-medium text-slate-700 mb-1.5 block">{label}</label>
+      <label className="text-xs font-medium text-slate-700 mb-1.5 block">
+        {label}
+      </label>
       {children}
     </div>
   );
