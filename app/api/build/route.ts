@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
+import { persistReport } from "@/lib/reports/persist";
 import type {
   BuildRequest,
   BuildResponse,
@@ -551,6 +552,20 @@ export async function POST(request: Request) {
 
   // 5. Adapt
   const { report, meta } = adapt(parsed, computed, narrative);
+
+  // 6. Persist (best-effort; ephemeral fallback if Supabase isn't configured)
+  let persistedId: string | null = null;
+  try {
+    persistedId = await persistReport({
+      report,
+      meta,
+      queryText: body.query,
+      authorId: null, // Day 4 wires real auth
+    });
+  } catch (err) {
+    warnings.push(`Persist failed: ${String(err).slice(0, 200)}`);
+  }
+
   const response: BuildResponse = {
     report,
     meta,
@@ -559,6 +574,7 @@ export async function POST(request: Request) {
       narrativeModel: NARRATIVE_MODEL,
       parsedOptionsCount: parsed.options.length,
       warnings,
+      persisted: persistedId !== null,
     },
   };
   return NextResponse.json(response);

@@ -157,5 +157,6 @@ export interface BuildResponse {
     narrativeModel: string;
     parsedOptionsCount: number;
     warnings: string[];
+    persisted?: boolean;
   };
 }

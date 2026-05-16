@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getReport, getMetaOrDefault, getAllReports } from "@/lib/reports";
+import { loadPersistedReport } from "@/lib/reports/persist";
 import { bestOption, fmt, carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
 import Lede from "@/components/Lede";
@@ -9,27 +10,45 @@ import Equivalencies from "@/components/Equivalencies";
 import PrimarySection from "@/components/PrimarySection";
 import SupportingCard from "@/components/SupportingCard";
 import Recommendation from "@/components/Recommendation";
-import type { PrimarySection as PrimarySectionType } from "@/lib/types";
+import type {
+  PrimarySection as PrimarySectionType,
+  Report,
+  ReportMeta,
+} from "@/lib/types";
 
 interface PageProps {
   params: { id: string };
 }
 
+// Library IDs are statically generated at build time. Other ids (e.g.
+// NEW-XXXXXX from /api/build) are rendered on-demand and hit Postgres.
+export const dynamicParams = true;
+
 export function generateStaticParams() {
   return getAllReports().map((r) => ({ id: r.id }));
 }
 
-export function generateMetadata({ params }: PageProps) {
-  const r = getReport(params.id);
+export async function generateMetadata({ params }: PageProps) {
+  const r =
+    getReport(params.id) ||
+    (await loadPersistedReport(params.id).then((p) => p?.report ?? null));
   return { title: r ? `${r.id} — ${r.title}` : "Report — Scope" };
 }
 
 const ALL_SECTIONS: PrimarySectionType[] = ["weight", "carbon", "composition", "eol", "circularity"];
 
-export default function ReportPage({ params }: PageProps) {
-  const report = getReport(params.id);
-  if (!report) return notFound();
-  const meta = getMetaOrDefault(report);
+async function resolveReport(
+  id: string,
+): Promise<{ report: Report; meta: ReportMeta } | null> {
+  const lib = getReport(id);
+  if (lib) return { report: lib, meta: getMetaOrDefault(lib) };
+  return await loadPersistedReport(id);
+}
+
+export default async function ReportPage({ params }: PageProps) {
+  const resolved = await resolveReport(params.id);
+  if (!resolved) return notFound();
+  const { report, meta } = resolved;
   const best = bestOption(report.options, "carbonKg");
   const worst = bestOption(report.options, "carbonKg", false);
   const bestMCI = bestOption(report.options, "mci", false);
