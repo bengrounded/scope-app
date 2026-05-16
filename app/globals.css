@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 :root {
+  /* Tenant-overridable accent. /t/[tenant]/layout.tsx sets these from
+     the tenant config row; this :root block is the Phase 1 default. */
+  --scope-primary: #6366F1;
+  --scope-primary-dark: #4F46E5;
+  --scope-primary-rgb: 99, 102, 241;
+  --scope-accent-gradient: linear-gradient(135deg, #6366F1, #8B5CF6);
   --indigo: #6366F1;
   --indigo-dark: #4F46E5;
   --grounded-green: #5C8A4C;
@@ -10,9 +16,9 @@
 
 html, body { background: #f8fafc; color: #0f172a; }
 
-.scope-purple { background: linear-gradient(135deg, #6366F1, #8B5CF6); }
+.scope-purple { background: var(--scope-accent-gradient); }
 .accent-text {
-  background: linear-gradient(135deg, #6366F1, #8B5CF6);
+  background: var(--scope-accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -32,13 +38,13 @@ html, body { background: #f8fafc; color: #0f172a; }
 
 .chip { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 500; }
 .filter-chip { padding: 6px 12px; border-radius: 6px; font-size: 13px; cursor: pointer; border: 1px solid #E2E8F0; background: white; text-align: left; }
-.filter-chip.active { background: #6366F1; color: white; border-color: #6366F1; }
+.filter-chip.active { background: var(--scope-primary); color: white; border-color: var(--scope-primary); }
 .filter-chip:not(.active):hover { background: #F1F5F9; }
 
 .pill-best  { background: #ECFDF5; color: #047857; border: 1px solid #A7F3D0; }
 .pill-worst { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
 
-.insight-box { background: linear-gradient(135deg, #EEF2FF 0%, #F0F9FF 100%); border-left: 3px solid #6366F1; padding: 16px 20px; border-radius: 8px; }
+.insight-box { background: linear-gradient(135deg, rgba(var(--scope-primary-rgb), 0.07) 0%, #F0F9FF 100%); border-left: 3px solid var(--scope-primary); padding: 16px 20px; border-radius: 8px; }
 .hover-lift { transition: transform .15s, box-shadow .15s; }
 .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
 .fade-in { animation: fadeIn .25s ease; }
