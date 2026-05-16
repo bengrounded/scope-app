@@ -482,9 +482,9 @@
         "eol": "Reuse then recycle",
         "carbonKg": 54123,
         "mci": 77,
-        "fossilPct": 2,
-        "recycledPct": 0,
-        "renewablePct": 98,
+        "fossilPct": 70,
+        "recycledPct": 30,
+        "renewablePct": 0,
         "eolSplit": {
           "recycled": 100,
           "composted": 0,

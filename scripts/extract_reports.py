@@ -6,9 +6,15 @@ Run:  python scripts/extract_reports.py
 """
 import json
 import os
-import sys
 import re
+import sys
 from pathlib import Path
+
+# Material-name patterns. Use word boundaries on short ambiguous tokens like
+# "pla" so they don't false-positive inside metal names — e.g. "tinplate"
+# previously matched `"pla" in m` and got tagged 98% renewable. COF-007 surfaced
+# this in the Day 2 sweep.
+_BIO_RE = re.compile(r"\b(bio|compostable|pla)\b")
 
 try:
     import openpyxl
@@ -83,7 +89,7 @@ def composition_for(material: str) -> dict:
     if "paper" in m or "carton" in m or "fsc" in m or "paperboard" in m:
         renewable = max(renewable, 80)
         fossil = max(0, 100 - renewable - recycled)
-    if "bio" in m or "compostable" in m or "pla" in m:
+    if _BIO_RE.search(m):
         renewable = max(renewable, 90)
         fossil = max(0, 100 - renewable - recycled)
     if "glass" in m:
