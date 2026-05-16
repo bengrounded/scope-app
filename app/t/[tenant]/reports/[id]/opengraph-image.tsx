@@ -54,6 +54,20 @@ export default async function ReportOG({ params }: Props) {
     highest > 0 ? Math.round(((highest - lowest) / highest) * 100) : 0;
   const winner =
     report.options.find((o) => o.carbonKg === lowest)?.name ?? "";
+  // Satori treats every JSX text fragment as a separate child node and
+  // demands display:flex when there are >1 children. Stringify ahead of
+  // time so each <div> renders a single text node.
+  const tenantName = tenant?.name ?? "Grounded";
+  const byTenant = `by ${tenantName}`;
+  const focusTag = `${report.options.length}-way · ${report.focusArea}`;
+  const deltaText = `−${deltaPct}%`;
+  const titleText =
+    report.title.length > 90 ? report.title.slice(0, 87) + "…" : report.title;
+  const summaryText = report.summary
+    ? report.summary.length > 220
+      ? report.summary.slice(0, 217) + "…"
+      : report.summary
+    : "";
 
   return new ImageResponse(
     (
@@ -97,7 +111,7 @@ export default async function ReportOG({ params }: Props) {
               marginLeft: 4,
             }}
           >
-            by {tenant?.name ?? "Grounded"}
+            {byTenant}
           </div>
           <div style={{ flexGrow: 1 }} />
           <div
@@ -122,13 +136,11 @@ export default async function ReportOG({ params }: Props) {
             marginBottom: 28,
           }}
         >
-          {report.title.length > 90
-            ? report.title.slice(0, 87) + "…"
-            : report.title}
+          {titleText}
         </div>
 
         {/* Summary */}
-        {report.summary && (
+        {summaryText && (
           <div
             style={{
               display: "flex",
@@ -138,9 +150,7 @@ export default async function ReportOG({ params }: Props) {
               marginBottom: "auto",
             }}
           >
-            {report.summary.length > 220
-              ? report.summary.slice(0, 217) + "…"
-              : report.summary}
+            {summaryText}
           </div>
         )}
 
@@ -158,16 +168,17 @@ export default async function ReportOG({ params }: Props) {
           <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
             <div
               style={{
+                display: "flex",
                 fontSize: 12,
                 letterSpacing: 1.5,
                 textTransform: "uppercase",
                 color: "#94a3b8",
               }}
             >
-              {report.options.length}-way · {report.focusArea}
+              {focusTag}
             </div>
             <div
-              style={{ fontSize: 28, fontWeight: 600, color: "#0f172a" }}
+              style={{ display: "flex", fontSize: 28, fontWeight: 600, color: "#0f172a" }}
             >
               {winner}
             </div>
@@ -182,6 +193,7 @@ export default async function ReportOG({ params }: Props) {
           >
             <div
               style={{
+                display: "flex",
                 fontSize: 12,
                 letterSpacing: 1.5,
                 textTransform: "uppercase",
@@ -192,12 +204,13 @@ export default async function ReportOG({ params }: Props) {
             </div>
             <div
               style={{
+                display: "flex",
                 fontSize: 44,
                 fontWeight: 800,
                 color: "#059669",
               }}
             >
-              −{deltaPct}%
+              {deltaText}
             </div>
           </div>
         </div>
