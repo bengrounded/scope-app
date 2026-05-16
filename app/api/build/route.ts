@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
 import { persistReport } from "@/lib/reports/persist";
+import { getCurrentUser } from "@/lib/supabase/server-cookies";
 import type {
   BuildRequest,
   BuildResponse,
@@ -556,11 +557,12 @@ export async function POST(request: Request) {
   // 6. Persist (best-effort; ephemeral fallback if Supabase isn't configured)
   let persistedId: string | null = null;
   try {
+    const user = await getCurrentUser();
     persistedId = await persistReport({
       report,
       meta,
       queryText: body.query,
-      authorId: null, // Day 4 wires real auth
+      authorId: user?.id ?? null,
     });
   } catch (err) {
     warnings.push(`Persist failed: ${String(err).slice(0, 200)}`);
