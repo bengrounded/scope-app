@@ -11,11 +11,15 @@ export const metadata = {
   },
 };
 
-export default function LibraryPage() {
+export default function LibraryPage({
+  params,
+}: {
+  params: { tenant: string };
+}) {
   const reports = getAllReports();
   return (
     <Suspense fallback={<div className="p-8 text-sm text-slate-500">Loading library…</div>}>
-      <LibraryClient reports={reports} />
+      <LibraryClient reports={reports} tenantSlug={params.tenant} />
     </Suspense>
   );
 }

@@ -8,6 +8,7 @@ import FilterSidebar from "@/components/FilterSidebar";
 
 interface Props {
   reports: Report[];
+  tenantSlug: string;
 }
 
 // URL-state-backed filters keep deep-linkable views without a state library.
@@ -16,9 +17,10 @@ function parseList(v: string | null): string[] {
   return v.split(",").filter(Boolean);
 }
 
-export default function LibraryClient({ reports }: Props) {
+export default function LibraryClient({ reports, tenantSlug }: Props) {
   const router = useRouter();
   const params = useSearchParams();
+  const libraryRoot = `/t/${tenantSlug}/library`;
 
   const focusAreas = parseList(params.get("focus"));
   const comparisonTypes = parseList(params.get("type"));
@@ -47,7 +49,7 @@ export default function LibraryClient({ reports }: Props) {
     if (nf.length) usp.set("focus", nf.join(","));
     if (nt.length) usp.set("type", nt.join(","));
     if (nq) usp.set("q", nq);
-    router.push(`/library${usp.toString() ? `?${usp.toString()}` : ""}`);
+    router.push(`${libraryRoot}${usp.toString() ? `?${usp.toString()}` : ""}`);
   }
 
   function toggle(list: string[], value: string): string[] {
@@ -93,7 +95,7 @@ export default function LibraryClient({ reports }: Props) {
           onToggleComparison={(ct) => pushParams({ type: toggle(comparisonTypes, ct) })}
           onClear={() => {
             setSearchInput("");
-            router.push("/library");
+            router.push(libraryRoot);
           }}
         />
 
@@ -107,7 +109,7 @@ export default function LibraryClient({ reports }: Props) {
             <div className="bg-white border border-slate-200 rounded-xl p-12 text-center">
               <p className="text-slate-600 mb-3">No reports match your filters.</p>
               <a
-                href="/build"
+                href={`/t/${tenantSlug}/build`}
                 className="inline-block scope-purple text-white px-4 py-2 rounded-lg text-sm font-medium"
               >
                 Build a new one →
@@ -116,7 +118,7 @@ export default function LibraryClient({ reports }: Props) {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {filtered.map((r) => (
-                <ReportCard key={r.id} report={r} />
+                <ReportCard key={r.id} report={r} tenantSlug={tenantSlug} />
               ))}
             </div>
           )}

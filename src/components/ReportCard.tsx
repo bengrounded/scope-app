@@ -2,16 +2,18 @@ import Link from "next/link";
 import type { Report } from "@/lib/types";
 import { carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
+import { tenantPath } from "@/lib/tenant";
 
 interface Props {
   report: Report;
+  tenantSlug: string;
 }
 
-export default function ReportCard({ report }: Props) {
+export default function ReportCard({ report, tenantSlug }: Props) {
   const delta = carbonDeltaPct(report.options);
   return (
     <Link
-      href={`/reports/${report.id}`}
+      href={tenantPath(tenantSlug, `/reports/${report.id}`)}
       className="block bg-white border border-slate-200 rounded-xl p-5 hover-lift"
     >
       <div className="flex items-start justify-between mb-3">

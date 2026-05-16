@@ -17,21 +17,26 @@ import type {
 } from "@/lib/types";
 
 interface PageProps {
-  params: { id: string };
+  params: { tenant: string; id: string };
 }
 
 // Library IDs are statically generated at build time. Other ids (e.g.
 // NEW-XXXXXX from /api/build) are rendered on-demand and hit Postgres.
 export const dynamicParams = true;
 
+const STATIC_TENANTS = ["grounded"];
+
 export function generateStaticParams() {
-  return getAllReports().map((r) => ({ id: r.id }));
+  const reports = getAllReports();
+  return STATIC_TENANTS.flatMap((tenant) =>
+    reports.map((r) => ({ tenant, id: r.id })),
+  );
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const r =
     getReport(params.id) ||
-    (await loadPersistedReport(params.id).then((p) => p?.report ?? null));
+    (await loadPersistedReport(params.id, params.tenant).then((p) => p?.report ?? null));
   if (!r) return { title: "Report" };
   const description =
     r.summary?.trim() || `${r.options.length}-way LCA comparison in ${r.focusArea}.`;
@@ -56,14 +61,15 @@ const ALL_SECTIONS: PrimarySectionType[] = ["weight", "carbon", "composition", "
 
 async function resolveReport(
   id: string,
+  tenantSlug: string,
 ): Promise<{ report: Report; meta: ReportMeta } | null> {
   const lib = getReport(id);
   if (lib) return { report: lib, meta: getMetaOrDefault(lib) };
-  return await loadPersistedReport(id);
+  return await loadPersistedReport(id, tenantSlug);
 }
 
 export default async function ReportPage({ params }: PageProps) {
-  const resolved = await resolveReport(params.id);
+  const resolved = await resolveReport(params.id, params.tenant);
   if (!resolved) return notFound();
   const { report, meta } = resolved;
   const best = bestOption(report.options, "carbonKg");
@@ -83,7 +89,10 @@ export default async function ReportPage({ params }: PageProps) {
     <div className="bg-white">
       <div className="border-b border-slate-200 sticky top-[60px] z-30 bg-white">
         <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-4 flex-wrap">
-          <Link href="/library" className="text-sm text-slate-600 hover:text-indigo-600">
+          <Link
+            href={`/t/${params.tenant}/library`}
+            className="text-sm text-slate-600 hover:text-indigo-600"
+          >
             ← Back to library
           </Link>
           <div className="h-5 w-px bg-slate-200" />

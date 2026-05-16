@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { getAllReports } from "@/lib/reports";
+import { DEFAULT_TENANT_SLUG } from "@/lib/tenant";
 
 export default function HomePage() {
   const reports = getAllReports();
+  const t = DEFAULT_TENANT_SLUG;
   return (
     <main className="max-w-7xl mx-auto px-6 py-16 fade-in">
       <div className="max-w-3xl">
@@ -18,19 +20,19 @@ export default function HomePage() {
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
-            href="/library"
+            href={`/t/${t}/library`}
             className="px-5 py-3 scope-purple text-white rounded-xl text-base font-semibold hover:opacity-90"
           >
             Open the library
           </Link>
           <Link
-            href="/build"
+            href={`/t/${t}/build`}
             className="px-5 py-3 border border-slate-200 bg-white rounded-xl text-base font-semibold hover:bg-slate-100"
           >
             Build a new comparison
           </Link>
           <Link
-            href="/learnings"
+            href={`/t/${t}/learnings`}
             className="px-5 py-3 border border-slate-200 bg-white rounded-xl text-base font-semibold hover:bg-slate-100"
           >
             See cross-database learnings

@@ -61,19 +61,30 @@ export async function persistReport(args: {
   return report.id;
 }
 
-/** Fetch a persisted report by id. Returns null if not found / no Supabase. */
+/**
+ * Fetch a persisted report by id. Returns null if not found / no Supabase.
+ * When `tenantSlug` is provided, the lookup also filters by tenant_id —
+ * required defence against cross-tenant leakage once Phase 2 has >1 tenant
+ * (RLS will enforce this server-side from Day 7; this is belt-and-braces).
+ */
 export async function loadPersistedReport(
   id: string,
+  tenantSlug?: string,
 ): Promise<PersistedReport | null> {
   const sb = getServerSupabase();
   if (!sb) return null;
-  const { data, error } = await sb
+  let query = sb
     .from("reports")
     .select(
       "id, title, focus_area, comparison_type, industry, pack_size, annual_volume, confidence, summary, notes, options, meta",
     )
-    .eq("id", id)
-    .maybeSingle();
+    .eq("id", id);
+  if (tenantSlug) {
+    const tenantId = await getTenantId(tenantSlug);
+    if (!tenantId) return null;
+    query = query.eq("tenant_id", tenantId);
+  }
+  const { data, error } = await query.maybeSingle();
   if (error || !data) return null;
   const report: Report = {
     id: data.id,
