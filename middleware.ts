@@ -27,6 +27,14 @@ export async function middleware(request: NextRequest) {
   const supaKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!supaUrl || !supaKey) return NextResponse.next();
 
+  // Soft-gate. AUTH_REQUIRED must be exactly "true" to enforce sign-in.
+  // Defaults to OFF so the app stays accessible during phased rollouts (e.g.
+  // before Google OAuth is fully configured). The session is still tracked —
+  // SessionPill shows the signed-in user and /api/build tags author_id —
+  // we just don't redirect strangers to /login. Flip to "true" once OAuth
+  // is live and the team is comfortable being gated.
+  if (process.env.AUTH_REQUIRED !== "true") return NextResponse.next();
+
   const response = NextResponse.next({ request });
 
   const supabase = createServerClient(supaUrl, supaKey, {
