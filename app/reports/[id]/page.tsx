@@ -32,7 +32,24 @@ export async function generateMetadata({ params }: PageProps) {
   const r =
     getReport(params.id) ||
     (await loadPersistedReport(params.id).then((p) => p?.report ?? null));
-  return { title: r ? `${r.id} — ${r.title}` : "Report — Scope" };
+  if (!r) return { title: "Report" };
+  const description =
+    r.summary?.trim() || `${r.options.length}-way LCA comparison in ${r.focusArea}.`;
+  const title = `${r.id} — ${r.title}`;
+  return {
+    title,
+    description,
+    openGraph: {
+      type: "article",
+      title,
+      description,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
 }
 
 const ALL_SECTIONS: PrimarySectionType[] = ["weight", "carbon", "composition", "eol", "circularity"];

@@ -1,6 +1,14 @@
+import { Suspense } from "react";
 import BuilderForm from "@/components/BuilderForm";
 
-export const metadata = { title: "Build new — Scope" };
+export const metadata = {
+  title: "Build new",
+  description: "Describe a packaging comparison in plain English; Scope runs the LCA and writes the story.",
+  openGraph: {
+    title: "Build a new comparison — Scope",
+    description: "Describe it in plain English; Scope runs the LCA and writes the story.",
+  },
+};
 
 export default function BuildPage() {
   return (
@@ -11,7 +19,9 @@ export default function BuildPage() {
           Describe it in plain English, or pick from the structured prompts. The form fills as you type.
         </p>
       </div>
-      <BuilderForm />
+      <Suspense fallback={<div className="text-sm text-slate-500">Loading builder…</div>}>
+        <BuilderForm />
+      </Suspense>
     </main>
   );
 }

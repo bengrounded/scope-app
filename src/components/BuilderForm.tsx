@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { BuildResponse, Option, PrimarySection as PrimarySectionType } from "@/lib/types";
 import { bestOption, carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
@@ -56,17 +57,33 @@ function regionFromUI(label: string): string | undefined {
 }
 
 export default function BuilderForm() {
-  const [description, setDescription] = useState("");
-  const [format, setFormat] = useState("");
-  const [packSize, setPackSize] = useState("");
-  const [industry, setIndustry] = useState("");
-  const [optionA, setOptionA] = useState("");
-  const [optionB, setOptionB] = useState("");
-  const [optionC, setOptionC] = useState("");
-  const [region, setRegion] = useState(REGIONS[0]);
+  const params = useSearchParams();
+  // URL params pre-fill the form. packGPT deeplinks land here with ?query=…
+  // plus optional ?packSize / ?industry / ?region / ?format / ?a / ?b / ?c.
+  const [description, setDescription] = useState(params.get("query") ?? "");
+  const [format, setFormat] = useState(params.get("format") ?? "");
+  const [packSize, setPackSize] = useState(params.get("packSize") ?? "");
+  const [industry, setIndustry] = useState(params.get("industry") ?? "");
+  const [optionA, setOptionA] = useState(params.get("a") ?? "");
+  const [optionB, setOptionB] = useState(params.get("b") ?? "");
+  const [optionC, setOptionC] = useState(params.get("c") ?? "");
+  const [region, setRegion] = useState(() => {
+    const r = params.get("region");
+    if (!r) return REGIONS[0];
+    return REGIONS.find((x) => x.toLowerCase().startsWith(r.toLowerCase())) ?? REGIONS[0];
+  });
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<BuildResponse | null>(null);
+
+  // Auto-submit when an inbound link includes ?auto=1 (packGPT chat deeplinks
+  // open the report directly, no extra click needed).
+  useEffect(() => {
+    if (params.get("auto") === "1" && (description || format || optionA)) {
+      handleSubmit();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   async function handleSubmit() {
     setSubmitting(true);
