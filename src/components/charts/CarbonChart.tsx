@@ -3,6 +3,7 @@
 import { Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
+  BarController,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -11,7 +12,8 @@ import {
 } from "chart.js";
 import type { Option } from "@/lib/types";
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, ChartTooltip, Legend);
+// chart.js v4 + react-chartjs-2 v5 doesn't auto-register the controller.
+ChartJS.register(BarController, CategoryScale, LinearScale, BarElement, ChartTooltip, Legend);
 
 interface Props {
   options: Option[];
@@ -49,19 +51,23 @@ export default function CarbonChart({ options }: Props) {
         Annual carbon footprint — kg CO₂-eq
       </h4>
       <p className="text-xs text-slate-500 mb-6">Stacked by lifecycle stage</p>
-      <Bar
-        data={{ labels, datasets }}
-        options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: {
-            legend: { position: "bottom" },
-            tooltip: { mode: "index", intersect: false },
-          },
-          scales: { x: { stacked: true }, y: { stacked: true } },
-        }}
-        height={240}
-      />
+      {/* Explicit-height parent — chart.js with maintainAspectRatio:false
+          inherits sizing from its parent, so without this the canvas
+          collapses to 0px and the chart appears blank. */}
+      <div style={{ position: "relative", height: 280 }}>
+        <Bar
+          data={{ labels, datasets }}
+          options={{
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { position: "bottom" },
+              tooltip: { mode: "index", intersect: false },
+            },
+            scales: { x: { stacked: true }, y: { stacked: true } },
+          }}
+        />
+      </div>
       <p className="text-[10px] text-slate-400 mt-3">
         Stage breakdown shown with default Grounded engine v3.0 splits. Real per-option breakdowns return once the compute engine is wired.
       </p>
