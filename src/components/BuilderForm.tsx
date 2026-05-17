@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Trash2 } from "lucide-react";
+import { Trash2, FileUp } from "lucide-react";
 import type { BuildResponse, Option, PrimarySection as PrimarySectionType } from "@/lib/types";
 import { bestOption, carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
@@ -106,6 +106,7 @@ export default function BuilderForm() {
     emptyOption(),
     emptyOption(),
   ]);
+  const [tdsFile, setTdsFile] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<BuildResponse | null>(null);
@@ -220,7 +221,16 @@ export default function BuilderForm() {
           placeholder="What do you want to compare? — describe a scenario, the formats you're weighing up, or anything else worth knowing."
           className="w-full px-4 py-3 border border-slate-200 rounded-xl text-base h-40 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 resize-none"
         />
-        <p className="text-xs text-slate-500 mt-2 mb-3">
+        <button
+          type="button"
+          onClick={handleSubmit}
+          disabled={submitting || description.trim().length < 5}
+          className="mt-3 w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          {submitting ? "Generating… (≈15–25s)" : "Generate from description →"}
+        </button>
+        <TdsUploadField file={tdsFile} onChange={setTdsFile} />
+        <p className="text-xs text-slate-500 mt-4 mb-3">
           Or start from one of these:
         </p>
         <div className="space-y-2">
@@ -312,7 +322,7 @@ export default function BuilderForm() {
           disabled={submitting}
           className="mt-4 w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-50"
         >
-          {submitting ? "Generating… (≈15–25s)" : "Generate report →"}
+          {submitting ? "Generating… (≈15–25s)" : "Generate from catalog →"}
         </button>
         {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
         <p className="text-xs text-slate-500 mt-3 text-center">
@@ -320,6 +330,50 @@ export default function BuilderForm() {
           value&apos;s source.
         </p>
       </div>
+    </div>
+  );
+}
+
+function TdsUploadField({
+  file,
+  onChange,
+}: {
+  file: File | null;
+  onChange: (f: File | null) => void;
+}) {
+  return (
+    <div className="mt-3">
+      <label className="flex items-center justify-between gap-3 px-3 py-2.5 border border-dashed border-slate-300 rounded-lg cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/50">
+        <span className="flex items-center gap-2 text-xs text-slate-600">
+          <FileUp size={14} className="text-slate-400" />
+          {file ? (
+            <span className="font-medium text-slate-800">{file.name}</span>
+          ) : (
+            <span>
+              Upload TDS (PDF / image) — extracted structure pre-fills the
+              review step
+            </span>
+          )}
+        </span>
+        <span className="text-[10px] uppercase tracking-wider text-amber-600 font-semibold">
+          coming next
+        </span>
+        <input
+          type="file"
+          accept="application/pdf,image/*"
+          className="hidden"
+          onChange={(e) => onChange(e.target.files?.[0] ?? null)}
+        />
+      </label>
+      {file && (
+        <button
+          type="button"
+          onClick={() => onChange(null)}
+          className="text-[11px] text-slate-500 hover:text-rose-600 mt-1"
+        >
+          Remove file
+        </button>
+      )}
     </div>
   );
 }
