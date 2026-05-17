@@ -128,10 +128,11 @@ export async function composeReport(args: {
   parsed: ParsedReport;
   queryText?: string;
   authorId?: string | null;
+  customer?: string | null;
   apiKey: string;
   computeUrl: string;
 }): Promise<BuildResponse> {
-  const { parsed, queryText, authorId, apiKey, computeUrl } = args;
+  const { parsed, queryText, authorId, customer, apiKey, computeUrl } = args;
   const client = new Anthropic({ apiKey });
   const warnings: string[] = [];
 
@@ -211,6 +212,7 @@ export async function composeReport(args: {
       meta,
       queryText,
       authorId: authorId ?? null,
+      customer: customer ?? null,
     });
   } catch (err) {
     warnings.push(`Persist failed: ${String(err).slice(0, 200)}`);

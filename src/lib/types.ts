@@ -213,4 +213,5 @@ export interface ParseResponse {
 export interface ComposeRequest {
   parsed: ParsedReport;
   queryText?: string;
+  customer?: string | null;
 }

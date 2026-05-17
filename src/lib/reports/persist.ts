@@ -19,6 +19,7 @@ export async function persistReport(args: {
   meta: ReportMeta;
   queryText?: string;
   authorId?: string | null;
+  customer?: string | null;
 }): Promise<string | null> {
   const sb = getServerSupabase();
   if (!sb) return null;
@@ -27,11 +28,12 @@ export async function persistReport(args: {
     throw new Error(`Tenant slug '${DEFAULT_TENANT_SLUG}' not found`);
   }
 
-  const { report, meta, queryText, authorId } = args;
+  const { report, meta, queryText, authorId, customer } = args;
   const { error } = await sb.from("reports").insert({
     id: report.id,
     tenant_id: tenantId,
     author_id: authorId ?? null,
+    customer: customer && customer.trim() ? customer.trim() : null,
     title: report.title,
     focus_area: report.focusArea,
     comparison_type: report.comparisonType,
@@ -109,6 +111,7 @@ export interface TenantReportSummary {
   focusArea: string | null;
   comparisonType: string | null;
   industry: string | null;
+  customer: string | null;
   packSize: string | null;
   annualVolume: number | null;
   optionsCount: number;
@@ -116,6 +119,25 @@ export interface TenantReportSummary {
   authorEmail: string | null;
   authorName: string | null;
   createdAt: string;
+}
+
+/** Distinct customer values seen for this tenant — feeds the typeahead. */
+export async function listTenantCustomers(tenantSlug: string): Promise<string[]> {
+  const sb = getServerSupabase();
+  if (!sb) return [];
+  const tenantId = await getTenantId(tenantSlug);
+  if (!tenantId) return [];
+  const { data, error } = await sb
+    .from("reports")
+    .select("customer")
+    .eq("tenant_id", tenantId)
+    .not("customer", "is", null);
+  if (error || !data) return [];
+  return Array.from(
+    new Set((data as Array<{ customer: string | null }>)
+      .map((r) => r.customer)
+      .filter((c): c is string => Boolean(c))),
+  ).sort();
 }
 
 /** List the tenant's most recent build-flow-generated reports. Ordered by
@@ -134,7 +156,7 @@ export async function listTenantReports(
   const { data, error } = await sb
     .from("reports")
     .select(
-      "id, title, focus_area, comparison_type, industry, pack_size, annual_volume, options, created_at, author:users(email, full_name)",
+      "id, title, focus_area, comparison_type, industry, customer, pack_size, annual_volume, options, created_at, author:users(email, full_name)",
     )
     .eq("tenant_id", tenantId)
     .order("created_at", { ascending: false })
@@ -154,6 +176,7 @@ export async function listTenantReports(
       focusArea: (r.focus_area as string | null) ?? null,
       comparisonType: (r.comparison_type as string | null) ?? null,
       industry: (r.industry as string | null) ?? null,
+      customer: (r.customer as string | null) ?? null,
       packSize: (r.pack_size as string | null) ?? null,
       annualVolume: (r.annual_volume as number | null) ?? null,
       optionsCount: opts.length,

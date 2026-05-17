@@ -98,7 +98,11 @@ function synthesizeStructuredQuery(opts: StructuredOption[]): string {
   return lines.length ? `Compare these options.\n${lines.join("\n")}` : "";
 }
 
-export default function BuilderForm() {
+interface BuilderFormProps {
+  customerSuggestions?: string[];
+}
+
+export default function BuilderForm({ customerSuggestions = [] }: BuilderFormProps = {}) {
   const params = useSearchParams();
   const [description, setDescription] = useState(params.get("query") ?? "");
   const [packSize, setPackSize] = useState(params.get("packSize") ?? "");
@@ -116,6 +120,7 @@ export default function BuilderForm() {
     emptyOption(),
   ]);
   const [tdsFile, setTdsFile] = useState<File | null>(null);
+  const [customer, setCustomer] = useState("");
   const [step, setStep] = useState<WizardStep>("form");
   const [error, setError] = useState<string | null>(null);
   const [parsed, setParsed] = useState<ParseResponse | null>(null);
@@ -237,7 +242,11 @@ export default function BuilderForm() {
       const res = await fetch("/api/compose", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ parsed: draft, queryText: originalQuery }),
+        body: JSON.stringify({
+          parsed: draft,
+          queryText: originalQuery,
+          customer: customer.trim() || null,
+        }),
       });
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
@@ -318,7 +327,10 @@ export default function BuilderForm() {
           warnings={parsed.warnings}
           composing={step === "composing"}
           error={error}
+          customer={customer}
+          customerSuggestions={customerSuggestions}
           onChange={setDraft}
+          onCustomerChange={setCustomer}
           onCompose={handleCompose}
           onBack={backToForm}
         />

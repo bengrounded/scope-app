@@ -44,6 +44,7 @@ export async function POST(request: Request) {
     const result = await composeReport({
       parsed: body.parsed,
       queryText: body.queryText,
+      customer: body.customer ?? null,
       authorId: user?.id ?? null,
       apiKey,
       computeUrl,

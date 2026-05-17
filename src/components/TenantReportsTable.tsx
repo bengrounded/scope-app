@@ -60,6 +60,7 @@ export default function TenantReportsTable({ reports, tenantSlug }: Props) {
                 <tr>
                   <th className="text-left px-4 py-2.5 font-medium">ID</th>
                   <th className="text-left px-4 py-2.5 font-medium">Title</th>
+                  <th className="text-left px-4 py-2.5 font-medium">Customer</th>
                   <th className="text-left px-4 py-2.5 font-medium">Focus</th>
                   <th className="text-left px-4 py-2.5 font-medium">Industry</th>
                   <th className="text-left px-4 py-2.5 font-medium">Options</th>
@@ -96,6 +97,9 @@ export default function TenantReportsTable({ reports, tenantSlug }: Props) {
                             : ""}
                         </div>
                       )}
+                    </td>
+                    <td className="px-4 py-3 text-xs text-slate-700 max-w-[140px] truncate">
+                      {r.customer ?? <span className="text-slate-400">—</span>}
                     </td>
                     <td className="px-4 py-3">
                       {r.focusArea ? (

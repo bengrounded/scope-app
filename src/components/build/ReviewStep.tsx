@@ -21,7 +21,10 @@ interface Props {
   warnings: string[];
   composing: boolean;
   error: string | null;
+  customer: string;
+  customerSuggestions: string[];
   onChange: (next: ParsedReport) => void;
+  onCustomerChange: (v: string) => void;
   onCompose: () => void;
   onBack: () => void;
 }
@@ -43,7 +46,10 @@ export default function ReviewStep({
   warnings,
   composing,
   error,
+  customer,
+  customerSuggestions,
   onChange,
+  onCustomerChange,
   onCompose,
   onBack,
 }: Props) {
@@ -119,6 +125,28 @@ export default function ReviewStep({
             value={parsed.title}
             onChange={(e) => onChange({ ...parsed, title: e.target.value })}
             className="w-full px-3 py-2 border border-slate-200 rounded-md text-sm"
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <Field label="Customer / brand (optional)">
+            <input
+              type="text"
+              list="scope-customer-suggestions"
+              value={customer}
+              onChange={(e) => onCustomerChange(e.target.value)}
+              placeholder="e.g. Cobbs, Vitasoy, internal R&D"
+              className="w-full px-3 py-2 border border-slate-200 rounded-md text-sm"
+            />
+            <datalist id="scope-customer-suggestions">
+              {customerSuggestions.map((c) => (
+                <option key={c} value={c} />
+              ))}
+            </datalist>
+          </Field>
+          <TextField
+            label="Industry"
+            value={parsed.industry}
+            onChange={(v) => onChange({ ...parsed, industry: v })}
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
