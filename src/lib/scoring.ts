@@ -3,8 +3,9 @@
 import type { Option } from "./types";
 
 type NumericOptionKey = {
-  [K in keyof Option]: Option[K] extends number ? K : never;
-}[keyof Option];
+  [K in keyof Option]-?: Option[K] extends number ? K : never;
+}[keyof Option] &
+  string;
 
 export interface OptionPick {
   idx: number;

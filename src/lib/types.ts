@@ -33,13 +33,31 @@ export interface Option {
   structure: string;
   weight: number;
   eol: string;
+  /** Total cradle-to-grave carbon in kg CO2-eq (annual). */
   carbonKg: number;
   mci: number;
   fossilPct: number;
   recycledPct: number;
   renewablePct: number;
   eolSplit: EolSplit;
+  /** Per-stage breakdown so the viewer can switch system boundary. Optional
+   * for backward compatibility — legacy library reports rendered before
+   * this field was added default to cradle-to-grave only. */
+  stages?: CarbonStages;
 }
+
+export interface CarbonStages {
+  rawMaterialsKg: number;
+  manufacturingKg: number;
+  logisticsKg: number;
+  endOfLifeKg: number;
+}
+
+/** System boundary for carbon reporting.
+ *  - "gate"  : cradle-to-gate   = raw materials + manufacturing (strict ISO definition).
+ *  - "grave" : cradle-to-grave  = raw + manufacturing + logistics + EOL.
+ */
+export type CarbonBoundary = "gate" | "grave";
 
 export interface Report {
   id: string;

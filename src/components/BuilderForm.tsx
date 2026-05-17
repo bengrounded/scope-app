@@ -14,6 +14,9 @@ import type {
 } from "@/lib/types";
 import { bestOption, carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
+import { applyBoundary, hasStages, BOUNDARY_LABEL } from "@/lib/boundary";
+import type { CarbonBoundary } from "@/lib/types";
+import BoundaryToggle from "./BoundaryToggle";
 import {
   FORMATS,
   FORMAT_CATEGORIES,
@@ -795,7 +798,11 @@ function BuilderResultView({
   data: BuildResponse;
   onReset: () => void;
 }) {
-  const { report, meta, trace } = data;
+  const { report: rawReport, meta, trace } = data;
+  const [boundary, setBoundary] = useState<CarbonBoundary>("grave");
+  const stagesAvailable = hasStages(rawReport);
+  const effectiveBoundary = stagesAvailable ? boundary : "grave";
+  const report = applyBoundary(rawReport, effectiveBoundary);
   const best = bestOption(report.options, "carbonKg");
   const worst = bestOption(report.options, "carbonKg", false);
   const bestMCI = bestOption(report.options, "mci", false);
@@ -828,6 +835,12 @@ function BuilderResultView({
           {report.comparisonType}
         </span>
         <div className="flex-1" />
+        <BoundaryToggle
+          value={effectiveBoundary}
+          onChange={setBoundary}
+          disabled={!stagesAvailable}
+          disabledReason="This report doesn't carry per-stage breakdown — cradle-to-grave only."
+        />
         <div className="flex items-center gap-1.5 text-xs text-slate-500">
           <span className="w-2 h-2 rounded-full bg-amber-500" />
           {report.confidence.charAt(0).toUpperCase() +

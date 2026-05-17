@@ -99,6 +99,12 @@ function adapt(
         landfilled: pct(c.end_of_life.landfilled_kg),
         incinerated: pct(c.end_of_life.incinerated_kg),
       },
+      stages: {
+        rawMaterialsKg: Math.round(c.carbon_footprint.raw_materials_kg),
+        manufacturingKg: Math.round(c.carbon_footprint.manufacturing_kg),
+        logisticsKg: Math.round(c.carbon_footprint.logistics_kg),
+        endOfLifeKg: Math.round(c.carbon_footprint.end_of_life_kg),
+      },
     };
   });
   const report: Report = {
