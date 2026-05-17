@@ -147,6 +147,16 @@ export interface BuildRequest {
   annualVolume?: number;
   packSize?: string;
   industry?: string;
+  tds?: TdsAttachment;
+}
+
+/** Technical data sheet uploaded by the user — fed to Claude as a document
+ * (PDF) or image content block so the parser can extract structure spec. */
+export interface TdsAttachment {
+  filename: string;
+  mimeType: string;
+  /** Base64-encoded file contents (no data: prefix). */
+  base64: string;
 }
 
 export interface BuildResponse {

@@ -5,7 +5,47 @@ import type {
   LibraryCatalog,
   ParsedReport,
   ParseResponse,
+  TdsAttachment,
 } from "@/lib/types";
+
+const TDS_PDF_MIMES = new Set(["application/pdf"]);
+const TDS_IMAGE_MIMES = new Set([
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "image/webp",
+  "image/gif",
+]);
+const TDS_MAX_BYTES = 10 * 1024 * 1024; // 10MB cap
+
+function tdsToContentBlock(tds: TdsAttachment): Anthropic.ContentBlockParam {
+  // Rough size guard — base64 expands by ~33% so the decoded length is the
+  // base64 length × 3/4. Fail fast if it's beyond the cap.
+  const approxBytes = (tds.base64.length * 3) / 4;
+  if (approxBytes > TDS_MAX_BYTES) {
+    throw new Error(
+      `TDS file ${tds.filename} is ${(approxBytes / 1024 / 1024).toFixed(1)}MB — max 10MB`,
+    );
+  }
+  const mt = tds.mimeType.toLowerCase();
+  if (TDS_PDF_MIMES.has(mt)) {
+    return {
+      type: "document",
+      source: { type: "base64", media_type: "application/pdf", data: tds.base64 },
+    };
+  }
+  if (TDS_IMAGE_MIMES.has(mt)) {
+    return {
+      type: "image",
+      source: {
+        type: "base64",
+        media_type: mt as "image/jpeg" | "image/png" | "image/webp" | "image/gif",
+        data: tds.base64,
+      },
+    };
+  }
+  throw new Error(`Unsupported TDS file type: ${tds.mimeType}`);
+}
 
 const PARSER_TOOL: Anthropic.Tool = {
   name: "parse_packaging_comparison",
@@ -60,7 +100,7 @@ const PARSER_TOOL: Anthropic.Tool = {
   },
 };
 
-function parserSystemPrompt(lib: LibraryCatalog): string {
+function parserSystemPrompt(lib: LibraryCatalog, hasTds: boolean): string {
   return `You are the parser for Grounded Packaging's Scope LCA tool. You translate
 free-text packaging comparison queries into engine inputs.
 
@@ -78,7 +118,22 @@ Composition percents must sum to 100 per option.
 ALL OPTIONS in a single report must compare apples-to-apples: same pack size /
 contents, same region, same annual_units. Vary format, material, or end-of-life,
 not the underlying product use case.
-
+${
+  hasTds
+    ? `
+== Technical data sheet (TDS) attached ==
+The user has attached a TDS (PDF or image) for one of the options. Read it
+carefully — TDSs typically list: layer-by-layer substrate breakdown with
+thicknesses in microns, basis weight (gsm), total per-unit weight, intended
+EOL pathway, and recycled / renewable content claims. Use this as the
+source-of-truth for whichever option the user is referring to. Surface the
+layer breakdown verbatim in display_structure (e.g. "PET 12µm / Al 9µm /
+PE 80µm"). If the TDS describes the dominant option (one referred to by name
+or position in the query), apply it to that option; for the other options
+synthesise sensible comparators from typical industry alternatives.
+`
+    : ""
+}
 == Closed vocabularies ==
 
 material_library_entry (${lib.materials.length}):
@@ -132,17 +187,26 @@ export async function parseQuery(args: {
     body.annualVolume ? `Annual volume hint: ${body.annualVolume}` : "",
     body.packSize ? `Pack size hint: ${body.packSize}` : "",
     body.industry ? `Industry hint: ${body.industry}` : "",
+    body.tds ? `Attached TDS: ${body.tds.filename}` : "",
   ]
     .filter(Boolean)
     .join("\n");
 
+  // Build the user message content. When a TDS is attached, send it as a
+  // document/image content block ahead of the text so Claude reads it first.
+  const content: Anthropic.ContentBlockParam[] = [];
+  if (body.tds) {
+    content.push(tdsToContentBlock(body.tds));
+  }
+  content.push({ type: "text", text: parseUserMsg });
+
   const resp = await client.messages.create({
     model: PARSER_MODEL,
     max_tokens: 4096,
-    system: parserSystemPrompt(library),
+    system: parserSystemPrompt(library, Boolean(body.tds)),
     tools: [PARSER_TOOL],
     tool_choice: { type: "tool", name: PARSER_TOOL.name },
-    messages: [{ role: "user", content: parseUserMsg }],
+    messages: [{ role: "user", content }],
   });
   const parsed = extractToolInput<ParsedReport>(resp, PARSER_TOOL.name);
   const warnings = validateParsed(parsed, library);

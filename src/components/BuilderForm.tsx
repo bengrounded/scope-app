@@ -153,6 +153,25 @@ export default function BuilderForm() {
     setOptions((prev) => (prev.length <= 2 ? prev : prev.filter((_, i) => i !== idx)));
   }
 
+  /** Read the uploaded TDS file as base64 (no `data:` prefix). Returns
+   *  undefined when no file is attached or it exceeds the 10MB cap. */
+  async function readTdsAttachment() {
+    if (!tdsFile) return undefined;
+    if (tdsFile.size > 10 * 1024 * 1024) {
+      throw new Error(`TDS file is ${(tdsFile.size / 1024 / 1024).toFixed(1)}MB — max 10MB`);
+    }
+    const base64 = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result as string;
+        resolve(dataUrl.split(",")[1] ?? "");
+      };
+      reader.onerror = () => reject(reader.error ?? new Error("File read failed"));
+      reader.readAsDataURL(tdsFile);
+    });
+    return { filename: tdsFile.name, mimeType: tdsFile.type, base64 };
+  }
+
   /** Assemble the user's query from description + structured options + context. */
   function assembleQuery(): string {
     const filledOpts = options.filter((o) => o.formatId);
@@ -178,6 +197,7 @@ export default function BuilderForm() {
       }
       setOriginalQuery(query);
       setStep("parsing");
+      const tds = await readTdsAttachment();
       const res = await fetch("/api/parse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -186,6 +206,7 @@ export default function BuilderForm() {
           region: regionFromUI(region),
           packSize: packSize || undefined,
           industry: industry || undefined,
+          tds,
         }),
       });
       if (!res.ok) {
@@ -244,6 +265,7 @@ export default function BuilderForm() {
       const query = assembleQuery();
       if (query.length < 5) throw new Error("Empty query");
       setOriginalQuery(query);
+      const tds = await readTdsAttachment();
       const res = await fetch("/api/build", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -252,6 +274,7 @@ export default function BuilderForm() {
           region: regionFromUI(region),
           packSize: packSize || undefined,
           industry: industry || undefined,
+          tds,
         }),
       });
       if (!res.ok) {
@@ -448,13 +471,13 @@ function TdsUploadField({
             <span className="font-medium text-slate-800">{file.name}</span>
           ) : (
             <span>
-              Upload TDS (PDF / image) — extracted structure pre-fills the
-              review step
+              Upload TDS (PDF / image, ≤10MB) — Claude extracts the
+              substrate spec into the review step
             </span>
           )}
         </span>
-        <span className="text-[10px] uppercase tracking-wider text-amber-600 font-semibold">
-          coming next
+        <span className="text-[10px] uppercase tracking-wider text-emerald-600 font-semibold">
+          live
         </span>
         <input
           type="file"
