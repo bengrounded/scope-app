@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <main className="max-w-7xl mx-auto px-6 py-16 fade-in">
       <div className="max-w-3xl">
-        <p className="flex items-center gap-2 text-xs uppercase tracking-wider text-tack-600 font-semibold mb-3">
-          <TackLogo size={14} className="text-tack-600" />
+        <p className="flex items-center gap-2 text-xs uppercase tracking-wider text-tack-700 font-semibold mb-3">
+          <TackLogo size={18} radius={4} />
           Scope by Tack
         </p>
         <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">

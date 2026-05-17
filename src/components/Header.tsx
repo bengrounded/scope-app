@@ -23,7 +23,7 @@ export default function Header() {
     <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
         <Link href={home} className="flex items-center gap-2 group">
-          <TackLogo size={22} className="text-tack-600" />
+          <TackLogo size={28} radius={6} />
           <span className="text-xl font-bold tracking-tight text-slate-900">
             scope
           </span>

@@ -12,7 +12,7 @@ export default function LoginPage({
     <main className="min-h-screen flex items-center justify-center bg-slate-50 px-6">
       <div className="w-full max-w-sm bg-white border border-slate-200 rounded-2xl p-8 shadow-sm">
         <div className="flex items-center gap-2 mb-1">
-          <TackLogo size={26} className="text-tack-600" />
+          <TackLogo size={32} radius={7} />
           <h1 className="text-2xl font-bold tracking-tight">scope</h1>
           <span className="text-xs text-slate-400 ml-1">
             by <span className="text-slate-700 font-semibold">tack</span>
