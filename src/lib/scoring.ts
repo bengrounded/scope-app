@@ -62,3 +62,34 @@ export function weightDeltaPct(options: Option[]): number {
 export function fmt(n: number): string {
   return n.toLocaleString("en-US");
 }
+
+// ---------------------------------------------------------------------------
+// Fossil-fuel reliance — surfacing per Ben's product feedback
+// ---------------------------------------------------------------------------
+
+export type FossilLevel = "low" | "medium" | "high" | "very-high";
+
+export interface FossilBadge {
+  level: FossilLevel;
+  label: string;
+  /** Tailwind class fragments matching the chip palette in globals.css. */
+  className: string;
+}
+
+/** Bucket a fossil-content % into the colour-coded badge used on OptionCard. */
+export function fossilBadge(fossilPct: number): FossilBadge {
+  if (fossilPct >= 90)
+    return { level: "very-high", label: "Heavy fossil reliance", className: "bg-rose-100 text-rose-800 border-rose-200" };
+  if (fossilPct >= 60)
+    return { level: "high", label: "High fossil reliance", className: "bg-orange-100 text-orange-800 border-orange-200" };
+  if (fossilPct >= 30)
+    return { level: "medium", label: "Moderate fossil reliance", className: "bg-amber-100 text-amber-900 border-amber-200" };
+  return { level: "low", label: "Low fossil reliance", className: "bg-emerald-100 text-emerald-800 border-emerald-200" };
+}
+
+/** Spread of fossil reliance across the option set (worst - best). */
+export function fossilDeltaPct(options: Option[]): number {
+  if (options.length < 2) return 0;
+  const ps = options.map((o) => o.fossilPct);
+  return Math.max(...ps) - Math.min(...ps);
+}

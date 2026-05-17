@@ -26,6 +26,7 @@ import {
 import Lede from "./Lede";
 import OptionCard from "./OptionCard";
 import Equivalencies from "./Equivalencies";
+import FossilReliancePanel from "./FossilReliancePanel";
 import PrimarySection from "./PrimarySection";
 import SupportingCard from "./SupportingCard";
 import Recommendation from "./Recommendation";
@@ -872,6 +873,7 @@ function BuilderResultView({
           worstName={report.options[worst.idx]?.name ?? ""}
           pct={delta}
         />
+        <FossilReliancePanel options={report.options} />
       </section>
 
       <section

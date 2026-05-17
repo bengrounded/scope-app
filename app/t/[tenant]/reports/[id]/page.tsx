@@ -14,6 +14,7 @@ import BoundaryToggle from "@/components/BoundaryToggle";
 import Lede from "@/components/Lede";
 import OptionCard from "@/components/OptionCard";
 import Equivalencies from "@/components/Equivalencies";
+import FossilReliancePanel from "@/components/FossilReliancePanel";
 import PrimarySection from "@/components/PrimarySection";
 import SupportingCard from "@/components/SupportingCard";
 import Recommendation from "@/components/Recommendation";
@@ -151,6 +152,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           worstName={report.options[worst.idx]?.name ?? ""}
           pct={delta}
         />
+        <FossilReliancePanel options={report.options} />
       </section>
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-10 fade-in" style={{ background: "linear-gradient(180deg, white 0%, #FAFBFC 100%)" }}>

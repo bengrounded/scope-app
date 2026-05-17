@@ -42,19 +42,26 @@ factual, terse, data-led, no marketing fluff. Use option names verbatim. Lede +
 primary section title together set up a finding; the supporting copy explains the
 driver in 1–2 sentences.
 
+When fossil-fuel reliance spreads >20 percentage points across the options, call
+that out explicitly in the lede or context — readers care as much about getting
+off virgin fossil feedstocks as they do about absolute carbon, and a 100% fossil
+option vs a 60% fossil option deserves naming even when carbon totals are
+similar.
+
 Story-type guide:
 - "counterintuitive": the heavier/more processed option turns out lowest-carbon.
 - "weight": result is dominated by per-unit mass.
 - "carbon": classical raw-materials carbon comparison, no surprises.
 - "lifecycle": EOL or manufacturing stage flips the result.
 - "tradeoff": no clear winner, depends on which metric.
-- "material": composition (recycled / renewable %) drives the answer.
+- "material": composition (recycled / renewable %, fossil reliance) drives the answer.
 - "format": format choice (SUP vs bottle vs can) drives the answer.
 
 Primary section guide:
 - "weight": when option weights differ >2×.
 - "carbon": when carbon difference is the headline.
-- "composition": when one option is meaningfully more recycled/renewable.
+- "composition": when one option is meaningfully more recycled/renewable OR
+  when fossil-fuel reliance differs by 20+ percentage points.
 - "eol": when EOL pathways differ dramatically.
 - "circularity": when MCI is the most differentiated metric.`;
 }
@@ -191,6 +198,7 @@ export async function composeReport(args: {
         carbon_kg_annual: c.carbon_footprint.total_kg,
         carbon_kg_per_unit: c.carbon_footprint.per_unit_kg,
         mci_pct: c.circularity.mci_pct,
+        fossil_pct: c.material_composition.fossil_pct,
         recycled_pct: c.material_composition.recycled_pct,
         renewable_pct: c.material_composition.renewable_pct,
         eol_pathway: parsed.options[i]?.eol_pathway,
