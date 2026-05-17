@@ -4,13 +4,12 @@ import { useId } from "react";
 
 /**
  * Tack brand mark — rounded square with the blue → teal → green gradient
- * background and the white asterisk on top.
+ * background and a six-blade swept asterisk on top. Each blade is a
+ * quadratic Bézier curving in the same rotational direction so the mark
+ * reads as "rolling forward" rather than a static asterisk.
  *
- * Renders inline as a square. Use the `size` prop to scale. The `radius`
- * prop controls the corner rounding (defaults to ~22% of size to mimic
- * iOS-style app-icon proportions). Pass `flat` to drop the gradient
- * background and render just a single-colour asterisk (inherits
- * currentColor) — useful for tight monochrome contexts.
+ * The single curve is defined once and rendered six times via 60° rotation
+ * around the centre. Stroke thickness scales with the viewBox.
  */
 export default function TackLogo({
   size = 24,
@@ -28,6 +27,12 @@ export default function TackLogo({
   const gradientId = useId();
   const r = radius ?? Math.round(size * 0.22);
 
+  // Each blade: starts at centre (0,0), curves to (0,-22) via a control point
+  // offset perpendicular to the direction of travel — gives the "swept blade"
+  // shape. We render 6 copies rotated by 60° each.
+  const bladePath = "M 0 0 Q 5 -11 0 -22";
+  const angles = [0, 60, 120, 180, 240, 300];
+
   if (flat) {
     return (
       <svg
@@ -40,10 +45,16 @@ export default function TackLogo({
         role="img"
         aria-label={title}
       >
-        <g stroke="currentColor" strokeWidth="9" strokeLinecap="round">
-          <line x1="32" y1="10" x2="32" y2="54" />
-          <line x1="13" y1="22" x2="51" y2="42" />
-          <line x1="13" y1="42" x2="51" y2="22" />
+        <g
+          transform="translate(32 32)"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="8"
+          strokeLinecap="round"
+        >
+          {angles.map((a) => (
+            <path key={a} d={bladePath} transform={`rotate(${a})`} />
+          ))}
         </g>
       </svg>
     );
@@ -66,11 +77,24 @@ export default function TackLogo({
           <stop offset="100%" stopColor="#B8C771" />
         </linearGradient>
       </defs>
-      <rect x="0" y="0" width="64" height="64" rx={r * (64 / size)} fill={`url(#${gradientId})`} />
-      <g stroke="#FFFFFF" strokeWidth="8" strokeLinecap="round">
-        <line x1="32" y1="12" x2="32" y2="52" />
-        <line x1="14" y1="22" x2="50" y2="42" />
-        <line x1="14" y1="42" x2="50" y2="22" />
+      <rect
+        x="0"
+        y="0"
+        width="64"
+        height="64"
+        rx={r * (64 / size)}
+        fill={`url(#${gradientId})`}
+      />
+      <g
+        transform="translate(32 32)"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeWidth="7"
+        strokeLinecap="round"
+      >
+        {angles.map((a) => (
+          <path key={a} d={bladePath} transform={`rotate(${a})`} />
+        ))}
       </g>
     </svg>
   );
