@@ -16,9 +16,10 @@ export default async function TenantLayout({ children, params }: Props) {
   if (!tenant) return notFound();
 
   // CSS custom properties feed the theming engine. .scope-purple, .accent-text,
-  // .filter-chip.active, .insight-box all read these.
-  const primary = tenant.primaryColor ?? "#6366F1";
-  const secondary = tenant.secondaryColor ?? "#8B5CF6";
+  // .filter-chip.active, .insight-box all read these. Tack brand defaults
+  // when tenant config is null.
+  const primary = tenant.primaryColor ?? "#1F66FF";
+  const secondary = tenant.secondaryColor ?? "#5C92FF";
   const styleVars: React.CSSProperties = {
     ["--scope-primary" as string]: primary,
     ["--scope-primary-rgb" as string]: hexToRgb(primary),

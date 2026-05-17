@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SessionPill from "./SessionPill";
+import TackLogo from "./TackLogo";
 import { DEFAULT_TENANT_SLUG, tenantSlugFromPath } from "@/lib/tenant";
 
 const NAV_ITEMS = [
@@ -21,10 +22,17 @@ export default function Header() {
   return (
     <header className="bg-white border-b border-slate-200 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center gap-6">
-        <Link href={home} className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md scope-purple" aria-hidden />
-          <span className="text-lg font-bold">scope</span>
-          <span className="text-xs text-slate-400 font-medium ml-1">by Grounded</span>
+        <Link href={home} className="flex items-center gap-2 group">
+          <TackLogo size={22} className="text-tack-600" />
+          <span className="text-xl font-bold tracking-tight text-slate-900">
+            scope
+          </span>
+          <span className="text-xs font-medium text-slate-400 ml-1">
+            by{" "}
+            <span className="text-slate-700 font-semibold tracking-tight">
+              tack
+            </span>
+          </span>
         </Link>
         <nav className="flex items-center gap-1">
           {NAV_ITEMS.map((item) => {

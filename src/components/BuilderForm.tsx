@@ -447,8 +447,8 @@ export default function BuilderForm() {
         </button>
         {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
         <p className="text-xs text-slate-500 mt-3 text-center">
-          Uses Grounded&apos;s assumption playbook. Tooltips show every
-          value&apos;s source.
+          Powered by the Grounded LCA assumption playbook. Tooltips show
+          every value&apos;s source.
         </p>
       </div>
     </div>

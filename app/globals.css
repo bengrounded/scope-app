@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  /* Tenant-overridable accent. /t/[tenant]/layout.tsx sets these from
-     the tenant config row; this :root block is the Phase 1 default. */
-  --scope-primary: #6366F1;
-  --scope-primary-dark: #4F46E5;
-  --scope-primary-rgb: 99, 102, 241;
-  --scope-accent-gradient: linear-gradient(135deg, #6366F1, #8B5CF6);
-  --indigo: #6366F1;
-  --indigo-dark: #4F46E5;
+  /* Tack brand accent. Tenant-overridable via /t/[tenant]/layout.tsx CSS
+     vars; this :root block is the publisher-brand default used on the
+     landing, login, and not-found surfaces. */
+  --scope-primary: #1F66FF;
+  --scope-primary-dark: #1850D6;
+  --scope-primary-rgb: 31, 102, 255;
+  --scope-accent-gradient: linear-gradient(135deg, #1F66FF, #5C92FF);
+  --tack-ink: #0F172A;
   --grounded-green: #5C8A4C;
 }
 

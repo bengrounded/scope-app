@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllReports } from "@/lib/reports";
 import { DEFAULT_TENANT_SLUG } from "@/lib/tenant";
+import TackLogo from "@/components/TackLogo";
 
 export default function HomePage() {
   const reports = getAllReports();
@@ -8,8 +9,9 @@ export default function HomePage() {
   return (
     <main className="max-w-7xl mx-auto px-6 py-16 fade-in">
       <div className="max-w-3xl">
-        <p className="text-xs uppercase tracking-wider text-indigo-600 font-semibold mb-3">
-          Scope — by Grounded
+        <p className="flex items-center gap-2 text-xs uppercase tracking-wider text-tack-600 font-semibold mb-3">
+          <TackLogo size={14} className="text-tack-600" />
+          Scope by Tack
         </p>
         <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight">
           Compare any packaging.{" "}
