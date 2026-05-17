@@ -1,5 +1,5 @@
 import { getServerSupabase, getTenantId } from "@/lib/supabase/server";
-import type { Option, Report, ReportMeta } from "@/lib/types";
+import type { Option, ParsedReport, Report, ReportMeta } from "@/lib/types";
 
 const DEFAULT_TENANT_SLUG =
   process.env.NEXT_PUBLIC_TENANT_ID || "grounded";
@@ -20,6 +20,7 @@ export async function persistReport(args: {
   queryText?: string;
   authorId?: string | null;
   customer?: string | null;
+  parsedPayload?: ParsedReport | null;
 }): Promise<string | null> {
   const sb = getServerSupabase();
   if (!sb) return null;
@@ -28,7 +29,7 @@ export async function persistReport(args: {
     throw new Error(`Tenant slug '${DEFAULT_TENANT_SLUG}' not found`);
   }
 
-  const { report, meta, queryText, authorId, customer } = args;
+  const { report, meta, queryText, authorId, customer, parsedPayload } = args;
   const { error } = await sb.from("reports").insert({
     id: report.id,
     tenant_id: tenantId,
@@ -46,6 +47,7 @@ export async function persistReport(args: {
     options: report.options,
     meta,
     query_text: queryText ?? null,
+    parsed_payload: parsedPayload ?? null,
     source: "build",
   });
   if (error) throw new Error(`Insert reports failed: ${error.message}`);
@@ -119,6 +121,26 @@ export interface TenantReportSummary {
   authorEmail: string | null;
   authorName: string | null;
   createdAt: string;
+}
+
+/** Retrieve the original ParsedReport stored alongside a persisted report.
+ * Returns null if the row doesn't exist or no parsed_payload was stored
+ * (older rows before migration 0006). */
+export async function loadParsedPayload(
+  id: string,
+  tenantSlug?: string,
+): Promise<ParsedReport | null> {
+  const sb = getServerSupabase();
+  if (!sb) return null;
+  let query = sb.from("reports").select("parsed_payload").eq("id", id);
+  if (tenantSlug) {
+    const tenantId = await getTenantId(tenantSlug);
+    if (!tenantId) return null;
+    query = query.eq("tenant_id", tenantId);
+  }
+  const { data, error } = await query.maybeSingle();
+  if (error || !data) return null;
+  return (data.parsed_payload as ParsedReport | null) ?? null;
 }
 
 /** Distinct customer values seen for this tenant — feeds the typeahead. */

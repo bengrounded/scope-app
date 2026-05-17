@@ -213,6 +213,7 @@ export async function composeReport(args: {
       queryText,
       authorId: authorId ?? null,
       customer: customer ?? null,
+      parsedPayload: parsed,
     });
   } catch (err) {
     warnings.push(`Persist failed: ${String(err).slice(0, 200)}`);

@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import { Trash2, FileUp } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { Trash2, FileUp, ChevronDown, ChevronRight, Sparkles, Library as LibraryIcon } from "lucide-react";
+import { DEFAULT_TENANT_SLUG, tenantSlugFromPath } from "@/lib/tenant";
+import type { SearchResult } from "@/lib/build/searcher";
 import type {
   BuildResponse,
   Option,
@@ -104,6 +106,9 @@ interface BuilderFormProps {
 
 export default function BuilderForm({ customerSuggestions = [] }: BuilderFormProps = {}) {
   const params = useSearchParams();
+  const pathname = usePathname() ?? "";
+  const router = useRouter();
+  const tenantSlug = tenantSlugFromPath(pathname) || DEFAULT_TENANT_SLUG;
   const [description, setDescription] = useState(params.get("query") ?? "");
   const [packSize, setPackSize] = useState(params.get("packSize") ?? "");
   const [industry, setIndustry] = useState(params.get("industry") ?? "");
@@ -127,15 +132,101 @@ export default function BuilderForm({ customerSuggestions = [] }: BuilderFormPro
   const [draft, setDraft] = useState<ParsedReport | null>(null);
   const [originalQuery, setOriginalQuery] = useState<string>("");
   const [result, setResult] = useState<BuildResponse | null>(null);
+  const [showCatalog, setShowCatalog] = useState(false);
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [cloning, setCloning] = useState(false);
   const submitting = step === "parsing";
 
+  // Auto-submit (?auto=1) and clone (?from=ID) inbound paths.
   useEffect(() => {
+    const fromId = params.get("from");
+    if (fromId) {
+      handleCloneFrom(fromId);
+      return;
+    }
     if (params.get("auto") === "1" && description.trim().length > 5) {
-      // Auto-submit deeplinks (packGPT) skip the review step and go end-to-end.
       handleOneShotBuild();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Debounced search-as-you-type across library + tenant reports.
+  const searchAbort = useRef<AbortController | null>(null);
+  useEffect(() => {
+    const q = description.trim();
+    if (q.length < 4) {
+      setSearchResults([]);
+      return;
+    }
+    const handle = setTimeout(async () => {
+      searchAbort.current?.abort();
+      const ac = new AbortController();
+      searchAbort.current = ac;
+      try {
+        const res = await fetch(
+          `/api/library/search?q=${encodeURIComponent(q)}&tenant=${encodeURIComponent(tenantSlug)}&limit=4`,
+          { signal: ac.signal },
+        );
+        if (!res.ok) return;
+        const data = (await res.json()) as { results: SearchResult[] };
+        setSearchResults(data.results ?? []);
+      } catch {
+        /* aborted or transient — ignore */
+      }
+    }, 350);
+    return () => clearTimeout(handle);
+  }, [description, tenantSlug]);
+
+  async function handleCloneFrom(id: string) {
+    setCloning(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/clone", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, tenant: tenantSlug }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.detail || body.error || `Clone failed: ${res.status}`);
+      }
+      const data = (await res.json()) as {
+        parsed: ParsedReport;
+        source: "library" | "tenant";
+        faithful: boolean;
+      };
+      setParsed({
+        parsed: data.parsed,
+        library: { materials: [], manufacturing_processes: [], electricity_grids: [], eol_pathways: [] },
+        warnings: data.faithful
+          ? []
+          : [`Cloned from ${id} (${data.source}) — fields synthesized from the rendered report. Review carefully.`],
+        trace: { parserModel: "clone", latencyMs: 0 },
+      });
+      setDraft(data.parsed);
+      setOriginalQuery(`Cloned from ${id}`);
+      // Library catalog is needed for the review step's EOL/process/grid
+      // dropdowns. Fetch it via /api/parse with a no-op tiny request — or
+      // better, hit Fly's /api/library directly through a small route.
+      // For simplicity here we fetch via parse with a sentinel query.
+      try {
+        const lib = await fetch("/api/library/catalog");
+        if (lib.ok) {
+          const catalog = await lib.json();
+          setParsed((p) => (p ? { ...p, library: catalog } : p));
+        }
+      } catch {
+        /* ignore */
+      }
+      setStep("review");
+      // Clean the URL.
+      router.replace(pathname);
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Clone failed");
+    } finally {
+      setCloning(false);
+    }
+  }
 
   function updateOption(idx: number, patch: Partial<StructuredOption>) {
     setOptions((prev) =>
@@ -318,6 +409,16 @@ export default function BuilderForm({ customerSuggestions = [] }: BuilderFormPro
     return <BuilderResultView data={result} onReset={resetForBuildAnother} />;
   }
 
+  if (cloning) {
+    return (
+      <div className="bg-white border border-slate-200 rounded-2xl p-10 text-center">
+        <Sparkles className="mx-auto mb-3 text-indigo-600" />
+        <h2 className="text-lg font-semibold mb-1">Pre-filling from existing report…</h2>
+        <p className="text-sm text-slate-500">Restoring structures. Takes ~5-15s.</p>
+      </div>
+    );
+  }
+
   if ((step === "review" || step === "composing") && parsed && draft) {
     return (
       <div id="scope-review-root">
@@ -339,130 +440,217 @@ export default function BuilderForm({ customerSuggestions = [] }: BuilderFormPro
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {/* LEFT — describe it */}
-      <div>
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-2 h-2 rounded-full bg-indigo-500" />
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-700">
-            Describe it
-          </h3>
-        </div>
+    <div className="space-y-6">
+      {/* DOMINANT — describe / search */}
+      <div className="bg-white border border-slate-200 rounded-2xl p-5 md:p-6 shadow-sm">
+        <label
+          htmlFor="scope-describe"
+          className="flex items-center gap-2 mb-2 text-sm font-semibold text-slate-700"
+        >
+          <Sparkles size={16} className="text-tack-600" />
+          Describe what you&apos;re looking to do — or see if we&apos;ve already got
+          one
+        </label>
         <textarea
+          id="scope-describe"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-          placeholder="What do you want to compare? — describe a scenario, the formats you're weighing up, or anything else worth knowing."
-          className="w-full px-4 py-3 border border-slate-200 rounded-xl text-base h-40 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 resize-none"
+          placeholder="e.g. compare a 250g coffee bag in mono-PE recyclable vs paper-based for Cobbs; or upload a TDS and we'll extract the spec for you"
+          className="w-full px-4 py-3 border border-slate-200 rounded-xl text-base h-32 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 resize-none"
         />
-        <button
-          type="button"
-          onClick={handleSubmit}
-          disabled={submitting || description.trim().length < 5}
-          className="mt-3 w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          {submitting ? "Generating… (≈15–25s)" : "Generate from description →"}
-        </button>
-        <TdsUploadField file={tdsFile} onChange={setTdsFile} />
-        <p className="text-xs text-slate-500 mt-4 mb-3">
-          Or start from one of these:
-        </p>
-        <div className="space-y-2">
-          {SUGGESTIONS.map((s) => (
-            <button
-              key={s}
-              type="button"
-              onClick={() => setDescription(s)}
-              className="w-full text-left px-3.5 py-2.5 border border-slate-200 rounded-lg text-sm hover:border-indigo-400 hover:bg-indigo-50"
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-      </div>
 
-      {/* RIGHT — structured */}
-      <div>
-        <div className="flex items-center gap-2 mb-4">
-          <div className="w-2 h-2 rounded-full bg-emerald-500" />
-          <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-700">
-            Or pick from the catalog
-          </h3>
-        </div>
-
-        <div className="bg-white border border-slate-200 rounded-xl p-5 space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <Field label="Pack size / contents">
-              <Input
-                value={packSize}
-                onChange={setPackSize}
-                placeholder="e.g. 250g coffee"
-              />
-            </Field>
-            <Field label="Customer region">
-              <Select value={region} onChange={setRegion}>
-                {REGIONS.map((r) => (
-                  <option key={r}>{r}</option>
-                ))}
-              </Select>
-            </Field>
-          </div>
-
-          <Field label="Industry / use case">
-            <Input
-              value={industry}
-              onChange={setIndustry}
-              placeholder="e.g. specialty coffee retail"
-            />
-          </Field>
-
-          <div>
-            <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-medium text-slate-700">
-                Options to compare ({options.length})
-              </label>
-              {options.length < 4 && (
-                <button
-                  type="button"
-                  onClick={addOption}
-                  className="text-xs font-medium text-indigo-600 hover:text-indigo-700"
-                >
-                  + Add option
-                </button>
-              )}
+        {/* Inline suggestions when a query matches existing reports. */}
+        {searchResults.length > 0 && (
+          <div className="mt-4 p-3 bg-tack-50 border border-tack-200 rounded-xl">
+            <div className="flex items-center gap-2 mb-2 text-xs font-semibold text-tack-700">
+              <LibraryIcon size={13} />
+              We may have something close — start from one of these and tweak?
             </div>
-            <div className="space-y-3">
-              {options.map((o, i) => (
-                <OptionPicker
-                  key={i}
-                  index={i}
-                  option={o}
-                  removable={options.length > 2}
-                  onChange={(patch) => updateOption(i, patch)}
-                  onRemove={() => removeOption(i)}
+            <div className="space-y-2">
+              {searchResults.map((r) => (
+                <SimilarReportCard
+                  key={`${r.source}-${r.id}`}
+                  result={r}
+                  onPick={() => handleCloneFrom(r.id)}
                 />
               ))}
             </div>
-            <p className="text-[11px] text-slate-500 mt-2">
-              Don&apos;t see your format? Describe it in the box on the left and
-              the parser will resolve it against the full materials library.
-            </p>
           </div>
-        </div>
+        )}
 
+        <div className="mt-4 flex items-center gap-3">
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={submitting || description.trim().length < 5}
+            className="flex-1 scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {submitting
+              ? "Generating… (≈15–25s)"
+              : "Generate from description →"}
+          </button>
+        </div>
+        <TdsUploadField file={tdsFile} onChange={setTdsFile} />
+        {error && (
+          <p className="mt-2 text-xs text-rose-600">{error}</p>
+        )}
+
+        {description.trim().length < 4 && (
+          <>
+            <p className="text-xs text-slate-500 mt-5 mb-2">
+              Or start from one of these:
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setDescription(s)}
+                  className="text-xs px-3 py-1.5 border border-slate-200 rounded-full text-slate-700 hover:border-indigo-400 hover:bg-indigo-50"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Secondary — structured catalog (collapsed by default) */}
+      <div className="bg-white border border-slate-200 rounded-2xl">
         <button
           type="button"
-          onClick={handleSubmit}
-          disabled={submitting}
-          className="mt-4 w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-50"
+          onClick={() => setShowCatalog((v) => !v)}
+          className="w-full flex items-center justify-between px-5 py-4 text-left"
         >
-          {submitting ? "Generating… (≈15–25s)" : "Generate from catalog →"}
+          <div>
+            <div className="text-sm font-semibold text-slate-800 flex items-center gap-2">
+              {showCatalog ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+              Or pick from the structured catalog
+            </div>
+            <p className="text-xs text-slate-500 mt-0.5 ml-6">
+              40 formats × structures — quick path when you know exactly what
+              you&apos;re comparing.
+            </p>
+          </div>
         </button>
-        {error && <p className="mt-2 text-xs text-rose-600">{error}</p>}
-        <p className="text-xs text-slate-500 mt-3 text-center">
-          Powered by the Grounded LCA assumption playbook. Tooltips show
-          every value&apos;s source.
-        </p>
+        {showCatalog && (
+          <div className="px-5 pb-5 space-y-4 border-t border-slate-100 pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <Field label="Pack size / contents">
+                <Input
+                  value={packSize}
+                  onChange={setPackSize}
+                  placeholder="e.g. 250g coffee"
+                />
+              </Field>
+              <Field label="Customer region">
+                <Select value={region} onChange={setRegion}>
+                  {REGIONS.map((r) => (
+                    <option key={r}>{r}</option>
+                  ))}
+                </Select>
+              </Field>
+            </div>
+
+            <Field label="Industry / use case">
+              <Input
+                value={industry}
+                onChange={setIndustry}
+                placeholder="e.g. specialty coffee retail"
+              />
+            </Field>
+
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-xs font-medium text-slate-700">
+                  Options to compare ({options.length})
+                </label>
+                {options.length < 4 && (
+                  <button
+                    type="button"
+                    onClick={addOption}
+                    className="text-xs font-medium text-indigo-600 hover:text-indigo-700"
+                  >
+                    + Add option
+                  </button>
+                )}
+              </div>
+              <div className="space-y-3">
+                {options.map((o, i) => (
+                  <OptionPicker
+                    key={i}
+                    index={i}
+                    option={o}
+                    removable={options.length > 2}
+                    onChange={(patch) => updateOption(i, patch)}
+                    onRemove={() => removeOption(i)}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleSubmit}
+              disabled={submitting}
+              className="w-full scope-purple text-white py-3 rounded-xl text-base font-semibold hover:opacity-90 disabled:opacity-50"
+            >
+              {submitting ? "Generating…" : "Generate from catalog →"}
+            </button>
+            <p className="text-[11px] text-slate-500 text-center">
+              Powered by the Grounded LCA assumption playbook.
+            </p>
+          </div>
+        )}
       </div>
+    </div>
+  );
+}
+
+function SimilarReportCard({
+  result,
+  onPick,
+}: {
+  result: SearchResult;
+  onPick: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-3 px-3 py-2.5 bg-white border border-tack-100 rounded-lg hover:border-tack-300 transition">
+      <div className="flex-1 min-w-0">
+        <div className="flex items-center gap-2">
+          <span className="font-mono text-[10px] text-slate-400">
+            {result.id}
+          </span>
+          <span
+            className={`text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded ${
+              result.source === "tenant"
+                ? "bg-emerald-100 text-emerald-700"
+                : "bg-slate-100 text-slate-600"
+            }`}
+          >
+            {result.source === "tenant" ? "your team" : "library"}
+          </span>
+          {result.customer && (
+            <span className="text-[10px] text-slate-500">
+              · {result.customer}
+            </span>
+          )}
+        </div>
+        <div className="text-sm font-medium text-slate-800 truncate">
+          {result.title}
+        </div>
+        <div className="text-[11px] text-slate-500 truncate">
+          {result.optionsCount}-way · {result.optionNames.slice(0, 3).join(" vs ")}
+        </div>
+      </div>
+      <button
+        type="button"
+        onClick={onPick}
+        className="text-xs font-semibold px-3 py-1.5 bg-tack-600 text-white rounded-md hover:bg-tack-700 whitespace-nowrap"
+      >
+        Start from this →
+      </button>
     </div>
   );
 }
