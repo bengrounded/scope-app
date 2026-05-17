@@ -15,6 +15,7 @@ import Lede from "@/components/Lede";
 import OptionCard from "@/components/OptionCard";
 import Equivalencies from "@/components/Equivalencies";
 import FossilReliancePanel from "@/components/FossilReliancePanel";
+import CarbonSection from "@/components/CarbonSection";
 import PrimarySection from "@/components/PrimarySection";
 import SupportingCard from "@/components/SupportingCard";
 import Recommendation from "@/components/Recommendation";
@@ -97,7 +98,9 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
       : report.options.length === 2
         ? "grid-cols-1 md:grid-cols-2"
         : "grid-cols-1";
-  const supporting = ALL_SECTIONS.filter((s) => s !== meta.primarySection);
+  // Carbon now lives in its own always-visible section above; drop it from
+  // the "supporting" grid so we don't render its chart twice.
+  const supporting = ALL_SECTIONS.filter((s) => s !== meta.primarySection && s !== "carbon");
 
   return (
     <div className="bg-white">
@@ -155,9 +158,19 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
         <FossilReliancePanel options={report.options} />
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-10 fade-in" style={{ background: "linear-gradient(180deg, white 0%, #FAFBFC 100%)" }}>
-        <PrimarySection report={report} meta={meta} />
+      <section className="max-w-7xl mx-auto px-6 md:px-12">
+        <CarbonSection
+          options={report.options}
+          boundary={effectiveBoundary}
+          stagesAvailable={stagesAvailable}
+        />
       </section>
+
+      {meta.primarySection !== "carbon" && (
+        <section className="max-w-7xl mx-auto px-6 md:px-12 py-10 fade-in" style={{ background: "linear-gradient(180deg, white 0%, #FAFBFC 100%)" }}>
+          <PrimarySection report={report} meta={meta} />
+        </section>
+      )}
 
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-10 fade-in">
         <h2 className="text-2xl font-bold mb-1">The complete picture</h2>

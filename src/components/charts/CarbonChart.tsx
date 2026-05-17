@@ -10,51 +10,79 @@ import {
   Tooltip as ChartTooltip,
   Legend,
 } from "chart.js";
-import type { Option } from "@/lib/types";
+import type { CarbonBoundary, Option } from "@/lib/types";
 
 // chart.js v4 + react-chartjs-2 v5 doesn't auto-register the controller.
 ChartJS.register(BarController, CategoryScale, LinearScale, BarElement, ChartTooltip, Legend);
 
 interface Props {
   options: Option[];
+  /** When supplied, stages excluded by the boundary render as muted bars
+   * (still visible so users see what's being excluded). Defaults to grave. */
+  boundary?: CarbonBoundary;
 }
 
-// Phase 1: deterministic stage breakdown using fixed proportions so charts
-// render without a backend. Engineer will replace with real stage results
-// from the compute engine.
-const STAGE_SHARES = {
-  raw: 0.45,
-  manufacturing: 0.25,
-  logistics: 0.12,
-  eol: 0.18,
-};
+// Fallback when an option has no stage breakdown (legacy data path).
+const FALLBACK_SHARES = { raw: 0.45, manufacturing: 0.25, logistics: 0.12, eol: 0.18 };
 
-const STAGE_COLOURS = ["#4F46E5", "#8B5CF6", "#0EA5E9", "#F59E0B"];
+interface Stage {
+  key: "raw" | "manufacturing" | "logistics" | "eol";
+  label: string;
+  color: string;
+  mutedColor: string;
+  inGate: boolean;
+}
 
-export default function CarbonChart({ options }: Props) {
+const STAGES: Stage[] = [
+  { key: "raw",           label: "Raw materials", color: "#1F66FF", mutedColor: "#C7D9FF", inGate: true },
+  { key: "manufacturing", label: "Manufacturing", color: "#4FA5C2", mutedColor: "#D2E6EC", inGate: true },
+  { key: "logistics",     label: "Logistics",     color: "#85C5A8", mutedColor: "#DBEBE2", inGate: false },
+  { key: "eol",           label: "End-of-life",   color: "#E0A95C", mutedColor: "#F2DFC2", inGate: false },
+];
+
+function stageKg(o: Option, key: Stage["key"]): number {
+  if (o.stages) {
+    return key === "raw"
+      ? o.stages.rawMaterialsKg
+      : key === "manufacturing"
+        ? o.stages.manufacturingKg
+        : key === "logistics"
+          ? o.stages.logisticsKg
+          : o.stages.endOfLifeKg;
+  }
+  // Legacy path — split carbonKg by the standard heuristic.
+  return Math.round(o.carbonKg * FALLBACK_SHARES[key]);
+}
+
+export default function CarbonChart({ options, boundary = "grave" }: Props) {
   const labels = options.map((o) => o.name);
-  const datasets = [
-    { label: "Raw materials", share: STAGE_SHARES.raw, color: STAGE_COLOURS[0] },
-    { label: "Manufacturing", share: STAGE_SHARES.manufacturing, color: STAGE_COLOURS[1] },
-    { label: "Logistics", share: STAGE_SHARES.logistics, color: STAGE_COLOURS[2] },
-    { label: "End-of-life", share: STAGE_SHARES.eol, color: STAGE_COLOURS[3] },
-  ].map((d) => ({
-    label: d.label,
-    data: options.map((o) => Math.round(o.carbonKg * d.share)),
-    backgroundColor: d.color,
-    stack: "carbon",
-  }));
+  const datasets = STAGES.map((s) => {
+    const active = boundary === "grave" || s.inGate;
+    return {
+      label: s.label + (active ? "" : " (excluded)"),
+      data: options.map((o) => stageKg(o, s.key)),
+      backgroundColor: active ? s.color : s.mutedColor,
+      stack: "carbon",
+    };
+  });
 
   return (
     <div className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8">
-      <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-1">
-        Annual carbon footprint — kg CO₂-eq
-      </h4>
-      <p className="text-xs text-slate-500 mb-6">Stacked by lifecycle stage</p>
+      <div className="flex items-baseline justify-between flex-wrap gap-3 mb-1">
+        <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+          Annual carbon footprint — kg CO₂-eq
+        </h4>
+        <span className="text-[11px] text-slate-500">
+          Stacked by lifecycle stage · {boundary === "gate" ? "muted bars excluded from gate total" : "all stages included"}
+        </span>
+      </div>
+      <p className="text-xs text-slate-500 mb-6">
+        Hover any bar for the per-stage kg.
+      </p>
       {/* Explicit-height parent — chart.js with maintainAspectRatio:false
           inherits sizing from its parent, so without this the canvas
           collapses to 0px and the chart appears blank. */}
-      <div style={{ position: "relative", height: 280 }}>
+      <div style={{ position: "relative", height: 320 }}>
         <Bar
           data={{ labels, datasets }}
           options={{
@@ -68,9 +96,6 @@ export default function CarbonChart({ options }: Props) {
           }}
         />
       </div>
-      <p className="text-[10px] text-slate-400 mt-3">
-        Stage breakdown shown with default Grounded engine v3.0 splits. Real per-option breakdowns return once the compute engine is wired.
-      </p>
     </div>
   );
 }
