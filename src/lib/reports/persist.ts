@@ -1,5 +1,5 @@
 import { getServerSupabase, getTenantId } from "@/lib/supabase/server";
-import type { Report, ReportMeta } from "@/lib/types";
+import type { Option, Report, ReportMeta } from "@/lib/types";
 
 const DEFAULT_TENANT_SLUG =
   process.env.NEXT_PUBLIC_TENANT_ID || "grounded";
@@ -100,4 +100,67 @@ export async function loadPersistedReport(
     options: data.options,
   };
   return { report, meta: data.meta as ReportMeta };
+}
+
+/** Lightweight summary of a tenant-generated report, for the library table. */
+export interface TenantReportSummary {
+  id: string;
+  title: string;
+  focusArea: string | null;
+  comparisonType: string | null;
+  industry: string | null;
+  packSize: string | null;
+  annualVolume: number | null;
+  optionsCount: number;
+  optionNames: string[];
+  authorEmail: string | null;
+  authorName: string | null;
+  createdAt: string;
+}
+
+/** List the tenant's most recent build-flow-generated reports. Ordered by
+ * created_at desc. Returns [] when Supabase isn't configured or the tenant
+ * doesn't resolve. */
+export async function listTenantReports(
+  tenantSlug: string,
+  limit = 50,
+): Promise<TenantReportSummary[]> {
+  const sb = getServerSupabase();
+  if (!sb) return [];
+  const tenantId = await getTenantId(tenantSlug);
+  if (!tenantId) return [];
+
+  // Nested select on the author FK (reports.author_id -> public.users.id).
+  const { data, error } = await sb
+    .from("reports")
+    .select(
+      "id, title, focus_area, comparison_type, industry, pack_size, annual_volume, options, created_at, author:users(email, full_name)",
+    )
+    .eq("tenant_id", tenantId)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error || !data) return [];
+
+  return data.map((r) => {
+    const opts = (r.options as Option[] | null) ?? [];
+    const author = r.author as
+      | { email: string | null; full_name: string | null }
+      | { email: string | null; full_name: string | null }[]
+      | null;
+    const authorRow = Array.isArray(author) ? author[0] : author;
+    return {
+      id: r.id as string,
+      title: r.title as string,
+      focusArea: (r.focus_area as string | null) ?? null,
+      comparisonType: (r.comparison_type as string | null) ?? null,
+      industry: (r.industry as string | null) ?? null,
+      packSize: (r.pack_size as string | null) ?? null,
+      annualVolume: (r.annual_volume as number | null) ?? null,
+      optionsCount: opts.length,
+      optionNames: opts.map((o) => o.name),
+      authorEmail: authorRow?.email ?? null,
+      authorName: authorRow?.full_name ?? null,
+      createdAt: r.created_at as string,
+    };
+  });
 }

@@ -57,7 +57,7 @@ export default function LibraryClient({ reports, tenantSlug }: Props) {
   }
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-8 fade-in">
+    <section className="fade-in">
       <div className="mb-10">
         <h1 className="text-3xl font-bold mb-2">Compare any packaging. Get the answer.</h1>
         <p className="text-slate-600 text-base mb-6">
@@ -124,6 +124,6 @@ export default function LibraryClient({ reports, tenantSlug }: Props) {
           )}
         </section>
       </div>
-    </main>
+    </section>
   );
 }
