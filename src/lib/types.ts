@@ -139,7 +139,7 @@ export interface LibraryCatalog {
   eol_pathways: string[];
 }
 
-// ===== Build-route I/O =====
+// ===== Build / parse / compose route I/O =====
 
 export interface BuildRequest {
   query: string;
@@ -159,4 +159,48 @@ export interface BuildResponse {
     warnings: string[];
     persisted?: boolean;
   };
+}
+
+/** Parser output — engine-ready options plus display metadata for the
+ * review/confirm UI. The Compose step takes (a possibly user-edited copy of)
+ * this and runs compute + narrative + persist. */
+export interface ParsedOption {
+  name: string;
+  weight_per_unit_g: number;
+  composition: CompositionEntry[];
+  manufacturing_process: string;
+  manufacturing_grid: string;
+  eol_pathway: string;
+  recycled_content_pct?: number;
+  renewable_content_pct?: number;
+  format: string;
+  display_material: string;
+  display_structure?: string;
+}
+
+export interface ParsedReport {
+  options: ParsedOption[];
+  region: string;
+  annual_units: number;
+  title: string;
+  focus_area: string;
+  comparison_type: string;
+  industry: string;
+  pack_size: string;
+  summary: string;
+}
+
+export interface ParseResponse {
+  parsed: ParsedReport;
+  library: LibraryCatalog;
+  warnings: string[];
+  trace: {
+    parserModel: string;
+    latencyMs: number;
+  };
+}
+
+export interface ComposeRequest {
+  parsed: ParsedReport;
+  queryText?: string;
 }

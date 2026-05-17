@@ -3,7 +3,13 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Trash2, FileUp } from "lucide-react";
-import type { BuildResponse, Option, PrimarySection as PrimarySectionType } from "@/lib/types";
+import type {
+  BuildResponse,
+  Option,
+  ParsedReport,
+  ParseResponse,
+  PrimarySection as PrimarySectionType,
+} from "@/lib/types";
 import { bestOption, carbonDeltaPct } from "@/lib/scoring";
 import { focusClassForArea } from "@/lib/focus";
 import {
@@ -18,6 +24,9 @@ import Equivalencies from "./Equivalencies";
 import PrimarySection from "./PrimarySection";
 import SupportingCard from "./SupportingCard";
 import Recommendation from "./Recommendation";
+import ReviewStep from "./build/ReviewStep";
+
+type WizardStep = "form" | "parsing" | "review" | "composing" | "result";
 
 const SUGGESTIONS = [
   "Compare a refill pouch to a single-use HDPE bottle for shampoo",
@@ -107,13 +116,18 @@ export default function BuilderForm() {
     emptyOption(),
   ]);
   const [tdsFile, setTdsFile] = useState<File | null>(null);
-  const [submitting, setSubmitting] = useState(false);
+  const [step, setStep] = useState<WizardStep>("form");
   const [error, setError] = useState<string | null>(null);
+  const [parsed, setParsed] = useState<ParseResponse | null>(null);
+  const [draft, setDraft] = useState<ParsedReport | null>(null);
+  const [originalQuery, setOriginalQuery] = useState<string>("");
   const [result, setResult] = useState<BuildResponse | null>(null);
+  const submitting = step === "parsing";
 
   useEffect(() => {
     if (params.get("auto") === "1" && description.trim().length > 5) {
-      handleSubmit();
+      // Auto-submit deeplinks (packGPT) skip the review step and go end-to-end.
+      handleOneShotBuild();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -139,35 +153,97 @@ export default function BuilderForm() {
     setOptions((prev) => (prev.length <= 2 ? prev : prev.filter((_, i) => i !== idx)));
   }
 
-  async function handleSubmit() {
-    setSubmitting(true);
+  /** Assemble the user's query from description + structured options + context. */
+  function assembleQuery(): string {
+    const filledOpts = options.filter((o) => o.formatId);
+    const structuredQuery = synthesizeStructuredQuery(filledOpts);
+    const contextBits = [
+      packSize && `Pack size: ${packSize}`,
+      industry && `Industry: ${industry}`,
+    ].filter(Boolean) as string[];
+    let query = description.trim();
+    if (structuredQuery) query = query ? `${query}\n\n${structuredQuery}` : structuredQuery;
+    if (contextBits.length) query = `${query}\n${contextBits.join(". ")}`;
+    return query;
+  }
+
+  /** Step 1 → 2: parse only, then transition to review. */
+  async function handleParse() {
     setError(null);
     setResult(null);
     try {
-      // Build the query. NL description always takes priority; structured
-      // options append additional precision if present.
-      const filledOpts = options.filter((o) => o.formatId);
-      const structuredQuery = synthesizeStructuredQuery(filledOpts);
-      const contextBits = [
-        packSize && `Pack size: ${packSize}`,
-        industry && `Industry: ${industry}`,
-      ].filter(Boolean) as string[];
-
-      let query = description.trim();
-      if (structuredQuery) {
-        query = query
-          ? `${query}\n\n${structuredQuery}`
-          : structuredQuery;
-      }
-      if (contextBits.length) {
-        query = `${query}\n${contextBits.join(". ")}`;
-      }
+      const query = assembleQuery();
       if (query.length < 5) {
-        throw new Error(
-          "Describe what to compare, or fill in at least one option in the catalog.",
-        );
+        throw new Error("Describe what to compare, or fill in at least one option.");
       }
+      setOriginalQuery(query);
+      setStep("parsing");
+      const res = await fetch("/api/parse", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          query,
+          region: regionFromUI(region),
+          packSize: packSize || undefined,
+          industry: industry || undefined,
+        }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.detail || body.error || `Parse failed: ${res.status}`);
+      }
+      const data = (await res.json()) as ParseResponse;
+      setParsed(data);
+      setDraft(data.parsed);
+      setStep("review");
+      requestAnimationFrame(() =>
+        document
+          .getElementById("scope-review-root")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      );
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Unknown error");
+      setStep("form");
+    }
+  }
 
+  /** Step 2 → 3: compose with the user's edited draft. */
+  async function handleCompose() {
+    if (!draft) return;
+    setError(null);
+    setStep("composing");
+    try {
+      const res = await fetch("/api/compose", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ parsed: draft, queryText: originalQuery }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.detail || body.error || `Compose failed: ${res.status}`);
+      }
+      const data = (await res.json()) as BuildResponse;
+      setResult(data);
+      setStep("result");
+      requestAnimationFrame(() =>
+        document
+          .getElementById("scope-build-result")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      );
+    } catch (e: unknown) {
+      setError(e instanceof Error ? e.message : "Unknown error");
+      setStep("review");
+    }
+  }
+
+  /** Auto-submit (?auto=1) bypasses review — parse + compose in one shot. */
+  async function handleOneShotBuild() {
+    setError(null);
+    setStep("parsing");
+    try {
+      const query = assembleQuery();
+      if (query.length < 5) throw new Error("Empty query");
+      setOriginalQuery(query);
       const res = await fetch("/api/build", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -184,25 +260,47 @@ export default function BuilderForm() {
       }
       const data = (await res.json()) as BuildResponse;
       setResult(data);
-      requestAnimationFrame(() =>
-        document
-          .getElementById("scope-build-result")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" }),
-      );
+      setStep("result");
     } catch (e: unknown) {
       setError(e instanceof Error ? e.message : "Unknown error");
-    } finally {
-      setSubmitting(false);
+      setStep("form");
     }
   }
 
   function resetForBuildAnother() {
     setResult(null);
+    setParsed(null);
+    setDraft(null);
     setError(null);
+    setStep("form");
   }
 
-  if (result) {
+  function backToForm() {
+    setStep("form");
+  }
+
+  // Submit handler used by both Generate buttons in the form view.
+  const handleSubmit = handleParse;
+
+  if (step === "result" && result) {
     return <BuilderResultView data={result} onReset={resetForBuildAnother} />;
+  }
+
+  if ((step === "review" || step === "composing") && parsed && draft) {
+    return (
+      <div id="scope-review-root">
+        <ReviewStep
+          parsed={draft}
+          library={parsed.library}
+          warnings={parsed.warnings}
+          composing={step === "composing"}
+          error={error}
+          onChange={setDraft}
+          onCompose={handleCompose}
+          onBack={backToForm}
+        />
+      </div>
+    );
   }
 
   return (
