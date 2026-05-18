@@ -17,6 +17,42 @@ function parseList(v: string | null): string[] {
   return v.split(",").filter(Boolean);
 }
 
+/** Tokenise a search query the same way the build-form searcher does:
+ * lowercase, split on non-alphanumeric, drop short tokens. Lets a long
+ * sentence like "compostable pouch HDPE tube paper-based" match reports
+ * that contain any of those keywords, instead of demanding the whole
+ * phrase appear verbatim. */
+function tokenize(q: string): string[] {
+  return Array.from(
+    new Set(
+      q
+        .toLowerCase()
+        .split(/[^a-z0-9-]+/)
+        .filter((t) => t.length >= 3),
+    ),
+  );
+}
+
+function scoreReport(report: Report, tokens: string[]): number {
+  if (tokens.length === 0) return 1;
+  const blob = [
+    report.title,
+    report.summary,
+    report.industry,
+    report.id,
+    ...(report.options ?? []).flatMap((o) => [
+      o.name,
+      o.material,
+      o.structure,
+      o.format,
+    ]),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  return tokens.reduce((s, t) => s + (blob.includes(t) ? 1 : 0), 0);
+}
+
 export default function LibraryClient({ reports, tenantSlug }: Props) {
   const router = useRouter();
   const params = useSearchParams();
@@ -29,16 +65,17 @@ export default function LibraryClient({ reports, tenantSlug }: Props) {
   const [searchInput, setSearchInput] = useState(search);
 
   const filtered = useMemo(() => {
-    return reports.filter((r) => {
-      if (focusAreas.length && !focusAreas.includes(r.focusArea)) return false;
-      if (comparisonTypes.length && !comparisonTypes.includes(r.comparisonType)) return false;
-      if (search) {
-        const q = search.toLowerCase();
-        const blob = [r.title, r.summary, r.industry, r.id].join(" ").toLowerCase();
-        if (!blob.includes(q)) return false;
-      }
-      return true;
-    });
+    const tokens = tokenize(search);
+    return reports
+      .map((r) => ({ r, score: scoreReport(r, tokens) }))
+      .filter(({ r, score }) => {
+        if (focusAreas.length && !focusAreas.includes(r.focusArea)) return false;
+        if (comparisonTypes.length && !comparisonTypes.includes(r.comparisonType)) return false;
+        if (tokens.length && score === 0) return false;
+        return true;
+      })
+      .sort((a, b) => (tokens.length ? b.score - a.score : 0))
+      .map(({ r }) => r);
   }, [reports, focusAreas, comparisonTypes, search]);
 
   function pushParams(next: { focus?: string[]; type?: string[]; q?: string }) {
@@ -73,8 +110,15 @@ export default function LibraryClient({ reports, tenantSlug }: Props) {
           <input
             type="text"
             value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            placeholder="Try: 'refill pouch vs single-use bottle for shampoo'"
+            onChange={(e) => {
+              setSearchInput(e.target.value);
+              // Live-search as the user types — push the query through URL
+              // state so filters + search remain shareable, and the
+              // tokenised matcher updates the visible card grid in real
+              // time.
+              pushParams({ q: e.target.value });
+            }}
+            placeholder="e.g. compostable pouch vs HDPE tube — keywords, not full sentences"
             className="w-full px-5 py-4 pr-32 border border-slate-200 rounded-xl text-base focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
           />
           <button
